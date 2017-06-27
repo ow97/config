@@ -103,6 +103,9 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9:Email
 bindsym $mod+Shift+0 move container to workspace 10:Media
 
+# Monitor connection hotkey
+bindsym $mod+m exec "sh ~/git/config/monitorhotplug"
+
 # Move workspaces between monitors
 bindsym $mod+Ctrl+Left move workspace to output eDP-1
 bindsym $mod+Ctrl+Right move workspace to output HDMI-A-1; move workspace to output VGA-1
