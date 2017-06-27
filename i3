@@ -7,18 +7,15 @@ exec "setxkbmap -layout gb"
 
 set $mod Mod4
 
-# Font for window titles.
-font pango:monospace 8
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Roboto 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Lock the station
-bindsym $mod+l exec "i3lock -f -e -c 202020"
+bindsym $mod+l exec "i3lock -f -e -c 404040"
 
 # Kill focused window
 bindsym $mod+F4 kill
@@ -31,6 +28,9 @@ bindsym $mod+Return exec termite
 
 # Start a browser
 bindsym $mod+b exec chromium
+
+# Show ranger
+bindsym $mod+r exec "termite --exec=ranger"
 
 # Show volume control
 bindsym $mod+v exec pavucontrol
@@ -107,23 +107,11 @@ bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     i3bar_command i3bar -t
-    status_command i3status
+    status_command i3blocks
     strip_workspace_numbers yes
     colors {
         background #000000
