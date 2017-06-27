@@ -7,6 +7,9 @@ exec "setxkbmap -layout gb"
 
 set $mod Mod4
 
+# Require click to refocus window
+focus_follows_mouse no
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Roboto 8
@@ -99,6 +102,10 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9:Email
 bindsym $mod+Shift+0 move container to workspace 10:Media
+
+# Move workspaces between monitors
+bindsym $mod+Ctrl+Left move workspace to output eDP-1
+bindsym $mod+Ctrl+Right move workspace to output HDMI-A-1; move workspace to output VGA-1
 
 # Enable back and forth
 workspace_auto_back_and_forth yes
