@@ -60,6 +60,9 @@ bindsym $mod+F11 fullscreen toggle
 # Toggle split direction
 bindsym $mod+s layout toggle split
 
+# Pin floating window
+bindsym $mod+p sticky toggle
+
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -79,8 +82,8 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+9 workspace 9:Email
+bindsym $mod+0 workspace 10:Media
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -91,8 +94,11 @@ bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+9 move container to workspace 9:Email
+bindsym $mod+Shift+0 move container to workspace 10:Media
+
+# Enable back and forth
+workspace_auto_back_and_forth yes
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -116,7 +122,20 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    i3bar_command i3bar -t
+    status_command i3status
+    strip_workspace_numbers yes
+    colors {
+        background #000000
+        statusline #ffffff
+        separator  #666666
+
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+    }
 }
 
 gaps inner 10
