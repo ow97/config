@@ -37,6 +37,9 @@ bindsym $mod+v exec pavucontrol
 # Cause Pavucontrol to show as floating window
 for_window [class="Pavucontrol"] floating enable
 
+# Printscreen
+bindsym Print exec "maim -s"
+
 # Move focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
