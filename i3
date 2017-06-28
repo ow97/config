@@ -1,6 +1,4 @@
 # i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 exec "compton -b"
 exec "setxkbmap -layout gb"
@@ -49,7 +47,7 @@ bindsym $mod+v exec pavucontrol
 for_window [class="Pavucontrol"] floating enable
 
 # Printscreen
-bindsym Print exec "maim -s"
+bindsym Print exec "sh ~/git/config/screenshot"
 
 # Move focus
 bindsym $mod+Left focus left
@@ -154,6 +152,7 @@ bar {
     }
 }
 
+smart_gaps true
 gaps inner 10
 gaps outer -5
 
