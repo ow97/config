@@ -21,13 +21,21 @@ floating_modifier $mod
 bindsym $mod+l exec "i3lock -f -e -c 404040"
 
 # Kill focused window
-bindsym $mod+F4 kill
+bindsym $mod+Escape kill
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
 # Start a terminal
 bindsym $mod+Return exec termite
+
+# Start a atom
+bindsym $mod+a exec atom
+
+# Start a wicd control panel
+bindsym $mod+w exec "wicd-gtk -n"
+# Cause Wicd to show as floating window
+for_window [class="Wicd"] floating enable
 
 # Start a browser
 bindsym $mod+b exec chromium
@@ -79,6 +87,9 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Ctrl+Up focus parent
 bindsym $mod+Ctrl+Down focus child
 
+# Create new workspace
+bindsym $mod+n exec "i3-input -P 'Workspace name: ' -F 'workspace %s'"
+
 # Switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -88,8 +99,10 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9:Email
-bindsym $mod+0 workspace 10:Media
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+minus workspace 11:Email
+bindsym $mod+equal workspace 12:Media
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -100,8 +113,10 @@ bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9:Email
-bindsym $mod+Shift+0 move container to workspace 10:Media
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+minus move container to workspace 11:Email
+bindsym $mod+Shift+equal move container to workspace 12:Media
 
 # Monitor connection hotkey
 bindsym $mod+m exec "sh ~/git/config/monitorhotplug"
@@ -110,8 +125,8 @@ bindsym $mod+m exec "sh ~/git/config/monitorhotplug"
 bindsym $mod+Ctrl+Left move workspace to output eDP-1
 bindsym $mod+Ctrl+Right move workspace to output HDMI-A-1; move workspace to output VGA-1
 
-# Enable back and forth
-workspace_auto_back_and_forth yes
+# Back and forth
+bindsym $mod+Tab workspace back_and_forth
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
