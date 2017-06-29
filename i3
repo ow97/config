@@ -199,3 +199,8 @@ bindsym XF86MonBrightnessDown exec "sudo xbacklight -fps 60 -time 200 -set 1"
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
 bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
+
+# Mouse button keys to click events
+bindsym Pointer_Button1 exec "xdotool click 1"
+bindsym Pointer_Button2 exec "xdotool click 2"
+bindsym Pointer_Button3 exec "xdotool click 3"
