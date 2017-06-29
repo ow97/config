@@ -158,3 +158,7 @@ gaps outer -5
 
 new_window none
 new_float none
+
+# Brightness keys
+bindsym XF86MonBrightnessUp exec "sudo xbacklight -fps 60 -time 1000 -set 100"
+bindsym XF86MonBrightnessDown exec "sudo xbacklight -fps 60 -time 1000 -set 1"
