@@ -1,22 +1,39 @@
-# i3 config file (v4)
+###############################################################################
+# Startup
+###############################################################################
 
 exec "compton -b"
 exec "setxkbmap -layout gb"
 
 set $mod Mod4
 
+###############################################################################
+# Configuration
+###############################################################################
+
 # Require click to refocus window
 focus_follows_mouse no
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
+# Set font
 font pango:Roboto 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Lock the station
-bindsym $mod+l exec "i3lock -f -e -c 404040"
+# Set gap sizes
+gaps inner 10
+gaps outer -5
+
+# Hide gaps when there is only a single window
+smart_gaps true
+
+# Hide all windows borders
+new_window none
+new_float none
+
+###############################################################################
+# Application hotkeys
+###############################################################################
 
 # Kill focused window
 bindsym $mod+Escape kill
@@ -30,16 +47,16 @@ bindsym $mod+Return exec termite
 # Start a atom
 bindsym $mod+a exec atom
 
-# Start a wicd control panel
-bindsym $mod+w exec "wicd-gtk -n"
-# Cause Wicd to show as floating window
-for_window [class="Wicd"] floating enable
-
 # Start a browser
 bindsym $mod+b exec chromium
 
 # Show ranger
 bindsym $mod+r exec "termite --exec=ranger"
+
+# Start a wicd control panel
+bindsym $mod+w exec "wicd-gtk -n"
+# Cause Wicd to show as floating window
+for_window [class="Wicd"] floating enable
 
 # Show volume control
 bindsym $mod+v exec pavucontrol
@@ -48,6 +65,13 @@ for_window [class="Pavucontrol"] floating enable
 
 # Printscreen
 bindsym Print exec "sh ~/git/config/screenshot"
+
+# Lock the station
+bindsym $mod+l exec "i3lock -f -e -c 404040"
+
+###############################################################################
+# Workspace and window management
+###############################################################################
 
 # Move focus
 bindsym $mod+Left focus left
@@ -66,7 +90,7 @@ bindsym $mod+Shift+h split h
 # Split in vertical orientation
 bindsym $mod+Shift+v split v
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+F11 fullscreen toggle
 
 # Toggle split direction
@@ -126,12 +150,22 @@ bindsym $mod+Ctrl+Right move workspace to output HDMI-A-1; move workspace to out
 # Back and forth
 bindsym $mod+Tab workspace back_and_forth
 
+###############################################################################
+# Reload, restart, exit
+###############################################################################
+
 # Reload the configuration file
 bindsym $mod+Shift+c reload
+
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+###############################################################################
+# Bar
+###############################################################################
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -152,12 +186,10 @@ bar {
     }
 }
 
-smart_gaps true
-gaps inner 10
-gaps outer -5
 
-new_window none
-new_float none
+###############################################################################
+# Multimedia keys
+###############################################################################
 
 # Brightness keys
 bindsym XF86MonBrightnessUp exec "sudo xbacklight -fps 60 -time 1000 -set 100"
