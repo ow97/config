@@ -155,13 +155,13 @@ bindsym $mod+Tab workspace back_and_forth
 ###############################################################################
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+F5 reload
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+F5 restart
 
 # Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Ctrl+Escape exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 ###############################################################################
 # Bar
@@ -192,8 +192,8 @@ bar {
 ###############################################################################
 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec "sudo xbacklight -fps 60 -time 1000 -set 100"
-bindsym XF86MonBrightnessDown exec "sudo xbacklight -fps 60 -time 1000 -set 1"
+bindsym XF86MonBrightnessUp exec "sudo xbacklight -fps 60 -time 200 -set 100"
+bindsym XF86MonBrightnessDown exec "sudo xbacklight -fps 60 -time 200 -set 1"
 
 # Volume keys
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
