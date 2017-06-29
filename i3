@@ -162,3 +162,8 @@ new_float none
 # Brightness keys
 bindsym XF86MonBrightnessUp exec "sudo xbacklight -fps 60 -time 1000 -set 100"
 bindsym XF86MonBrightnessDown exec "sudo xbacklight -fps 60 -time 1000 -set 1"
+
+# Volume keys
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
