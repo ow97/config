@@ -50,8 +50,11 @@ bindsym $mod+a exec atom
 # Start a browser
 bindsym $mod+b exec chromium
 
-# Show ranger
+# Start ranger
 bindsym $mod+r exec "termite --exec=ranger"
+
+# Start htop
+bindsym $mod+h exec "termite --exec=htop"
 
 # Start a wicd control panel
 bindsym $mod+w exec "wicd-gtk -n"
