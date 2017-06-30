@@ -44,7 +44,7 @@ bindsym $mod+d exec dmenu_run
 # Start a terminal
 bindsym $mod+Return exec termite
 
-# Start a atom
+# Start atom
 bindsym $mod+a exec atom
 
 # Start a browser
