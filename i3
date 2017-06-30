@@ -50,6 +50,9 @@ bindsym $mod+a exec atom
 # Start a browser
 bindsym $mod+b exec chromium
 
+# Start Jetbrains Toolbox
+bindsym $mod+j exec jetbrains-toolbox
+
 # Start ranger
 bindsym $mod+r exec "termite --exec=ranger"
 
