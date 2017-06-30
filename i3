@@ -73,7 +73,7 @@ for_window [class="Pavucontrol"] floating enable
 bindsym Print exec "sh ~/git/config/screenshot"
 
 # Lock the station
-bindsym $mod+l exec "i3lock -f -e -c 404040"
+bindsym $mod+l exec "i3lock -f -e -t -i ~/lock.png -c 404040"
 
 ###############################################################################
 # Workspace and window management
