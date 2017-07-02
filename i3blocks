@@ -2,10 +2,6 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
-[iface]
-interval=5
-separator=false
-
 [ssid]
 command=iwgetid -r
 separator=false
@@ -14,6 +10,10 @@ interval=5
 [wifi]
 instance=wlp3s0
 interval=10
+separator=false
+
+[iface]
+interval=5
 separator=false
 
 [bandwidth]
