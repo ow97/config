@@ -2,6 +2,10 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
+[window title]
+command=xdotool getactivewindow getwindowname
+interval=1
+
 [ssid]
 command=iwgetid -r
 separator=false
@@ -20,9 +24,6 @@ separator=false
 min_width=IN 999K OUT 99K
 align=center
 interval=1
-
-#[openvpn]
-#interval=20
 
 [cpu_usage -w 25 -c 90]
 label=CPU
