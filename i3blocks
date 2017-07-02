@@ -7,6 +7,7 @@ interval=5
 separator=false
 
 [ssid]
+command=iwgetid -r
 separator=false
 interval=5
 
@@ -30,7 +31,8 @@ min_width=CPU: 100.00%
 align=center
 separator=false
 
-[temperature -w 60 -c 75]
+[temperature]
+command=/usr/lib/i3blocks/temperature --chip coretemp-isa-0000
 label=TEMP
 interval=5
 
