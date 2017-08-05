@@ -178,7 +178,10 @@ bindsym $mod+Ctrl+Escape exec "i3-nagbar -t warning -m 'Do you really want to ex
 bar {
     i3bar_command i3bar -t
     status_command i3blocks
+
+    tray_output none
     strip_workspace_numbers yes
+
     colors {
         background #000000
         statusline #ffffff
