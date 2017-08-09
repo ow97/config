@@ -210,7 +210,7 @@ bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
 # Remap caps lock to middle click
-exec "xmodmap -e 'keycode 66 = Pointer_Button2'"
+exec_always --no-startup-id /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'
 
 # Mouse button keys to click events
 bindsym Pointer_Button1 exec "xdotool click 1"
