@@ -17,7 +17,7 @@ focus_follows_mouse no
 # Set font
 font pango:Roboto 8
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 # Set gap sizes
@@ -31,18 +31,19 @@ smart_gaps true
 new_window none
 new_float none
 
+# Kill focused window
+bindsym $mod+Escape kill
+
 ###############################################################################
 # Application hotkeys
 ###############################################################################
-
-# Kill focused window
-bindsym $mod+Escape kill
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
 # Start a terminal
 bindsym $mod+Return exec termite
+bindsym $mod+KP_Enter exec termite
 
 # Start atom
 bindsym $mod+a exec atom
@@ -100,6 +101,7 @@ bindsym $mod+Shift+v split v
 bindsym $mod+F11 fullscreen toggle
 
 # Toggle split direction
+bindsym $mod+t layout toggle all
 bindsym $mod+s layout toggle split
 
 # Pin floating window
@@ -115,10 +117,14 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Ctrl+Up focus parent
 bindsym $mod+Ctrl+Down focus child
 
-# Create new workspace
+# Custom named workspaces
 bindsym $mod+n exec "i3-input -P 'Workspace name: ' -F 'workspace %s'"
+bindsym $mod+Shift+n exec "i3-input -P 'Destination workspace name: ' -F 'move container to workspace %s'"
 
 # Switch to workspace
+bindsym $mod+grave workspace prev
+bindsym $mod+BackSpace workspace next
+
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -129,8 +135,18 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-bindsym $mod+minus workspace 11:Email
-bindsym $mod+equal workspace 12:Media
+bindsym $mod+Mod1+1 workspace 11
+bindsym $mod+Mod1+2 workspace 12
+bindsym $mod+Mod1+3 workspace 13
+bindsym $mod+Mod1+4 workspace 14
+bindsym $mod+Mod1+5 workspace 15
+bindsym $mod+Mod1+6 workspace 16
+bindsym $mod+Mod1+7 workspace 17
+bindsym $mod+Mod1+8 workspace 18
+bindsym $mod+Mod1+9 workspace 19
+bindsym $mod+Mod1+0 workspace 20
+bindsym $mod+minus workspace 254:Email
+bindsym $mod+equal workspace 255:Media
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -143,8 +159,18 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-bindsym $mod+Shift+minus move container to workspace 11:Email
-bindsym $mod+Shift+equal move container to workspace 12:Media
+bindsym $mod+Mod1+Shift+1 move container to workspace 11
+bindsym $mod+Mod1+Shift+2 move container to workspace 12
+bindsym $mod+Mod1+Shift+3 move container to workspace 13
+bindsym $mod+Mod1+Shift+4 move container to workspace 14
+bindsym $mod+Mod1+Shift+5 move container to workspace 15
+bindsym $mod+Mod1+Shift+6 move container to workspace 16
+bindsym $mod+Mod1+Shift+7 move container to workspace 17
+bindsym $mod+Mod1+Shift+8 move container to workspace 18
+bindsym $mod+Mod1+Shift+9 move container to workspace 19
+bindsym $mod+Mod1+Shift+0 move container to workspace 20
+bindsym $mod+Shift+minus move container to workspace 254:Email
+bindsym $mod+Shift+equal move container to workspace 255:Media
 
 # Monitor connection hotkey
 bindsym $mod+m exec "sh ~/git/config/monitorhotplug"
@@ -197,7 +223,7 @@ bar {
 
 
 ###############################################################################
-# Key bindings
+# Media key bindings
 ###############################################################################
 
 # Brightness keys
