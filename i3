@@ -2,6 +2,9 @@
 # Startup
 ###############################################################################
 
+exec "numlockx"
+exec "feh --bg-fill ~/background.png"
+
 exec "compton -b"
 exec "setxkbmap -layout gb"
 
@@ -98,7 +101,7 @@ bindsym $mod+Shift+h split h
 bindsym $mod+Shift+v split v
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+F11 fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # Toggle split direction
 bindsym $mod+t layout toggle all
@@ -173,7 +176,7 @@ bindsym $mod+Shift+minus move container to workspace 254:Email
 bindsym $mod+Shift+equal move container to workspace 255:Media
 
 # Monitor connection hotkey
-bindsym $mod+m exec "sh ~/git/config/monitorhotplug"
+bindsym $mod+F8 exec "sh ~/git/config/monitorhotplug"
 
 # Move workspaces between monitors
 bindsym $mod+Ctrl+Left move workspace to output eDP-1
@@ -226,9 +229,22 @@ bar {
 # Media key bindings
 ###############################################################################
 
+# Brightness
+bindsym $mod+F12 exec "light -A 1"
+bindsym $mod+F11 exec "light -U 1"
+
+# Brightness on scroll
+bindsym --whole-window $mod+button4 exec "light -A 1"
+bindsym --whole-window $mod+button5 exec "light -U 1"
+
 # Brightness keys
 bindsym XF86MonBrightnessUp exec "sudo xbacklight -fps 60 -time 200 -set 100"
 bindsym XF86MonBrightnessDown exec "sudo xbacklight -fps 60 -time 200 -set 1"
+
+# Volume
+bindsym $mod+F3 exec "pactl set-sink-volume 0 +5%"
+bindsym $mod+F2 exec "pactl set-sink-volume 0 -5%"
+bindsym $mod+F1 exec "pactl set-sink-mute 0 toggle"
 
 # Volume keys
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
