@@ -52,6 +52,11 @@ interval=5
 label=DISK
 interval=30
 
+[volume]
+label=VOL
+command=pamixer --get-volume | xargs printf '%d%%'
+interval=1
+
 [battery]
 label=BAT
 interval=5
