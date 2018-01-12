@@ -129,7 +129,7 @@ bindsym Mod4+m mode "Move Window"
 bindsym Mod4+n exec i3-input -F 'workspace "%s"' -P 'Workspace name: '
 bindsym Mod4+o mode "Move and Follow"
 bindsym Mod4+p mode "Position Window"
-bindsym Mod4+q kill
+bindsym Mod4+q mode "Quit"
 bindsym Mod4+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 bindsym Mod4+s sticky toggle
 bindsym Mod4+t mode default
@@ -198,7 +198,7 @@ mode Command {
     bindsym n mode default
     bindsym o mode "Move and Follow"
     bindsym p mode "Position Window"
-    bindsym q kill; mode default
+    bindsym q mode "Quit"
     bindsym r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '; mode default
     bindsym s mode sticky toggle
     bindsym t mode default
@@ -590,4 +590,12 @@ mode "Position Window" {
     bindsym Mod4+Up move up
     bindsym Right move right
     bindsym Mod4+Right move right
+}
+
+mode "Quit" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+
+    bindsym q kill; mode default
+    bindsym Mod4+q kill; mode default
 }
