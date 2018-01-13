@@ -90,7 +90,7 @@ for_window [class="Pavucontrol"] floating enable
 # Command structure
 ###############################################################################
 
-bindsym ISO_Level3_Shift mode Command
+bindsym ISO_Level3_Shift mode "Command"
 
 bindsym Mod4+F5 restart
 
@@ -117,7 +117,7 @@ bindsym Mod4+a mode default
 bindsym Mod4+b move workspace to output eDP-1
 bindsym Mod4+c mode default
 bindsym Mod4+d exec dmenu_run
-bindsym Mod4+e mode Execute
+bindsym Mod4+e mode "Execute"
 bindsym Mod4+f mode "Change Focus"
 bindsym Mod4+g mode default
 bindsym Mod4+h split h
@@ -135,10 +135,10 @@ bindsym Mod4+s sticky toggle
 bindsym Mod4+t mode default
 bindsym Mod4+u mode default
 bindsym Mod4+v split v
-bindsym Mod4+w mode Workspace
+bindsym Mod4+w mode "Workspace"
 bindsym Mod4+x move workspace to output HDMI-1
 bindsym Mod4+y mode default
-bindsym Mod4+z mode default
+bindsym Mod4+z mode "Enter night mode?"
 
 bindsym Mod4+Return exec termite
 bindsym Mod4+KP_Enter exec termite
@@ -155,11 +155,11 @@ bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
 
 # Use volume rocker to change brightness
-bindsym Mod4+XF86AudioRaiseVolume exec "light -A 4"
-bindsym Mod4+XF86AudioLowerVolume exec "light -U 4"
+bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1+1)}' | xargs light -S"
+bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1-1)}' | xargs light -S"
 
 
-mode Command {
+mode "Command" {
     bindsym Escape mode default
 
     bindsym F5 restart
@@ -186,7 +186,7 @@ mode Command {
     bindsym b move workspace to output eDP-1
     bindsym c mode default
     bindsym d exec dmenu_run; mode default
-    bindsym e mode Execute
+    bindsym e mode "Execute"
     bindsym f mode "Change Focus"
     bindsym g mode default
     bindsym h split h; mode default
@@ -200,14 +200,14 @@ mode Command {
     bindsym p mode "Position Window"
     bindsym q mode "Quit"
     bindsym r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '; mode default
-    bindsym s mode sticky toggle
+    bindsym s sticky toggle
     bindsym t mode default
     bindsym u mode default
     bindsym v split v; mode default
-    bindsym w mode Workspace
+    bindsym w mode "Workspace"
     bindsym x move workspace to output HDMI-1
     bindsym y mode default
-    bindsym z mode default
+    bindsym z mode "Enter night mode?"
 
     bindsym Return exec termite; mode default
     bindsym KP_Enter exec termite; mode default
@@ -224,11 +224,11 @@ mode Command {
     bindsym Shift+Right move right; mode default
 
     # Use volume rocker to change brightness
-    bindsym XF86AudioRaiseVolume exec "light -A 4"
-    bindsym XF86AudioLowerVolume exec "light -U 4"
+    bindsym XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1+1)}' | xargs light -S"
+    bindsym XF86AudioLowerVolume exec "light | awk '{print int($1/1.1-1)}' | xargs light -S"
 }
 
-mode Execute {
+mode "Execute" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
 
@@ -306,7 +306,7 @@ mode Execute {
     bindsym Mod4+z mode default
 }
 
-mode Workspace {
+mode "Workspace" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
 
@@ -598,4 +598,34 @@ mode "Quit" {
 
     bindsym q kill; mode default
     bindsym Mod4+q kill; mode default
+}
+
+mode "Enter night mode?" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+
+    bindsym z exec light -S 1; exec light -k -S 0; exec pactl set-sink-volume 0 5%; mode "Night"
+    bindsym Mod4+z exec light -S 1; exec light -k -S 0; exec pactl set-sink-volume 0 5%; mode "Night"
+}
+
+mode "Night" {
+    bindsym Escape exec light -k -S 50; mode default
+
+    bindsym space exec light -S 0; mode "Night (Black)"
+
+    bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
+    bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
+
+    bindsym --whole-window button4 exec pactl set-sink-volume 0 +1%
+    bindsym --whole-window button5 exec pactl set-sink-volume 0 -1%
+}
+
+mode "Night (Black)" {
+    bindsym space exec light -S 1; mode "Night"
+
+    bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
+    bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
+
+    bindsym --whole-window button4 exec pactl set-sink-volume 0 +1%
+    bindsym --whole-window button5 exec pactl set-sink-volume 0 -1%
 }
