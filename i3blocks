@@ -56,6 +56,12 @@ interval=30
 label=VOL
 command=pamixer --get-volume | xargs printf '%d%%'
 interval=1
+separator=false
+
+[brightness]
+label=BRIGHT
+command=light
+interval=1
 
 [battery]
 label=BAT
