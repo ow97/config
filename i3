@@ -155,8 +155,8 @@ bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
 
 # Use volume rocker to change brightness
-bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1+1)}' | xargs light -S"
-bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1-1)}' | xargs light -S"
+bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
+bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 
 
 mode "Command" {
@@ -224,8 +224,8 @@ mode "Command" {
     bindsym Shift+Right move right; mode default
 
     # Use volume rocker to change brightness
-    bindsym XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1+1)}' | xargs light -S"
-    bindsym XF86AudioLowerVolume exec "light | awk '{print int($1/1.1-1)}' | xargs light -S"
+    bindsym XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
+    bindsym XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 }
 
 mode "Execute" {
