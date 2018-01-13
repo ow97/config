@@ -60,7 +60,7 @@ separator=false
 
 [brightness]
 label=BRIGHT
-command=light
+command=light | awk '{ print int($1)"%" }'
 interval=1
 
 [battery]
