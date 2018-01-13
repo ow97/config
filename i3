@@ -161,6 +161,7 @@ bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xarg
 
 mode "Command" {
     bindsym Escape mode default
+    bindsym ISO_Level3_Shift mode default
 
     bindsym F5 restart
 
