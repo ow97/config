@@ -126,11 +126,11 @@ bindsym Mod4+j mode default
 bindsym Mod4+k mode default
 bindsym Mod4+l exec "i3lock -f -e -t -i ~/lock.png -c 404040"
 bindsym Mod4+m mode "Move Window"
-bindsym Mod4+n exec i3-input -F 'workspace "%s"' -P 'Workspace name: '
+bindsym Mod4+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 bindsym Mod4+o mode "Move and Follow"
 bindsym Mod4+p mode "Position Window"
 bindsym Mod4+q mode "Quit"
-bindsym Mod4+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+bindsym Mod4+r mode "Resize"
 bindsym Mod4+s sticky toggle
 bindsym Mod4+t mode default
 bindsym Mod4+u mode default
@@ -157,7 +157,6 @@ bindsym Mod4+Shift+Right move right
 # Use volume rocker to change brightness
 bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
 bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
-
 
 mode "Command" {
     bindsym Escape mode default
@@ -196,11 +195,11 @@ mode "Command" {
     bindsym k mode default
     bindsym l exec "i3lock -f -e -t -i ~/lock.png -c 404040"
     bindsym m mode "Move Window"
-    bindsym n mode default
+    bindsym n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '; mode default
     bindsym o mode "Move and Follow"
     bindsym p mode "Position Window"
     bindsym q mode "Quit"
-    bindsym r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '; mode default
+    bindsym r mode "Resize"
     bindsym s sticky toggle
     bindsym t mode default
     bindsym u mode default
@@ -629,4 +628,13 @@ mode "Night (Black)" {
 
     bindsym --whole-window button4 exec pactl set-sink-volume 0 +1%
     bindsym --whole-window button5 exec pactl set-sink-volume 0 -1%
+}
+
+mode "Resize" {
+    bindsym Escape mode "default"
+
+    bindsym Left        resize shrink width 10 px or 1 ppt
+    bindsym Down        resize grow height 10 px or 1 ppt
+    bindsym Up          resize shrink height 10 px or 1 ppt
+    bindsym Right       resize grow width 10 px or 1 ppt
 }
