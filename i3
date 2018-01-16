@@ -124,7 +124,7 @@ bindsym Mod4+h split h
 bindsym Mod4+i exec i3-input
 bindsym Mod4+j mode default
 bindsym Mod4+k mode default
-bindsym Mod4+l exec "i3lock -f -e -t -i ~/lock.png -c 404040"
+bindsym Mod4+l mode "Lock?"
 bindsym Mod4+m mode "Move Window"
 bindsym Mod4+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 bindsym Mod4+o mode "Move and Follow"
@@ -193,7 +193,7 @@ mode "Command" {
     bindsym i exec i3-input; mode default
     bindsym j mode default
     bindsym k mode default
-    bindsym l exec "i3lock -f -e -t -i ~/lock.png -c 404040"
+    bindsym l mode "Lock?"
     bindsym m mode "Move Window"
     bindsym n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '; mode default
     bindsym o mode "Move and Follow"
@@ -598,6 +598,14 @@ mode "Quit?" {
 
     bindsym q kill; mode default
     bindsym Mod4+q kill; mode default
+}
+
+mode "Lock?" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+
+    bindsym l exec i3lock -feti ~/lock.png -c 404040; mode default
+    bindsym Mod4+l exec i3lock -feti ~/lock.png -c 404040; mode default
 }
 
 mode "Enter night mode?" {
