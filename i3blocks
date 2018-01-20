@@ -54,13 +54,13 @@ interval=30
 
 [volume]
 label=VOL
-command=pamixer --get-volume | xargs printf '%d%%'
+command=$HOME/git/config/volume.sh
 interval=1
 separator=false
 
 [brightness]
 label=BRIGHT
-command=light | awk '{ print int($1)"%" }'
+command=$HOME/git/config/brightness.sh
 interval=1
 
 [battery]
