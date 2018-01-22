@@ -8,7 +8,7 @@ esac
 
 if [ $(pamixer --get-mute) = true ]
 then
-  echo 'MUTE'
+  pamixer --get-volume | xargs printf '(%d%%)'
 else
   pamixer --get-volume | xargs printf '%d%%'
 fi
