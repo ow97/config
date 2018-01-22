@@ -12,8 +12,8 @@ separator=false
 interval=5
 
 [wifi]
-instance=wlp3s0
-interval=10
+instance=wlp1s0
+interval=5
 separator=false
 
 [iface]
