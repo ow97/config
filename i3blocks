@@ -54,13 +54,13 @@ interval=30
 
 [volume]
 label=VOL
-command=$HOME/git/config/volume.sh
+command=$HOME/git/config/blocks/volume.sh
 interval=1
 separator=false
 
 [brightness]
 label=BRIGHT
-command=$HOME/git/config/brightness.sh
+command=$HOME/git/config/blocks/brightness.sh
 interval=1
 
 [battery]
