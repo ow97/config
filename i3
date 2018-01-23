@@ -3,14 +3,13 @@
 ###############################################################################
 
 exec "numlockx"
-exec "feh --bg-fill ~/background.png"
+exec_always "feh --bg-fill ~/background.png"
 
-exec "compton -b"
-exec "setxkbmap -layout gb"
+exec_always "compton -b"
+exec_always "setxkbmap -layout gb"
 
 # Remap caps lock to middle click
-exec_always --no-startup-id /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'
-#exec_always --no-startup-id /usr/bin/xmodmap -e 'keycode 108 = Super_L'
+exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 
 ###############################################################################
 # Configuration
