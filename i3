@@ -312,6 +312,13 @@ mode "Workspace" {
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
 
+    bindsym Tab workspace back_and_forth; mode default
+    bindsym Mod4+Tab workspace back_and_forth; mode default
+    bindsym grave workspace prev; mode default
+    bindsym Mod4+grave workspace prev; mode default
+    bindsym BackSpace workspace next; mode default
+    bindsym Mod4+BackSpace workspace next; mode default
+
     bindsym 1 workspace 1; mode default
     bindsym Mod4+1 workspace 1; mode default
     bindsym 2 workspace 2; mode default
@@ -597,6 +604,9 @@ mode "Quit?" {
 
     bindsym q kill; mode default
     bindsym Mod4+q kill; mode default
+
+    bindsym k exec "termite --exec=xkill"; mode default
+    bindsym Mod4+k exec "termite -exec=xkill"; mode default
 }
 
 mode "Lock?" {
@@ -641,7 +651,7 @@ mode "Resize" {
     bindsym Escape mode "default"
 
     bindsym Left        resize shrink width 10 px or 1 ppt
-    bindsym Down        resize grow height 10 px or 1 ppt
-    bindsym Up          resize shrink height 10 px or 1 ppt
+    bindsym Up          resize grow height 10 px or 1 ppt
+    bindsym Down        resize shrink height 10 px or 1 ppt
     bindsym Right       resize grow width 10 px or 1 ppt
 }
