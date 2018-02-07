@@ -115,7 +115,7 @@ bindsym Mod4+0 mode default
 bindsym Mod4+a mode default
 bindsym Mod4+b move workspace to output eDP-1
 bindsym Mod4+c mode default
-bindsym Mod4+d exec dmenu_run
+bindsym Mod4+d exec "rofi -show drun"
 bindsym Mod4+e mode "Execute"
 bindsym Mod4+f mode "Change Focus"
 bindsym Mod4+g mode default
@@ -184,7 +184,7 @@ mode "Command" {
     bindsym a mode default
     bindsym b move workspace to output eDP-1
     bindsym c mode default
-    bindsym d exec dmenu_run; mode default
+    bindsym d exec "rofi -show drun"; mode default
     bindsym e mode "Execute"
     bindsym f mode "Change Focus"
     bindsym g mode default
@@ -585,8 +585,8 @@ mode "Position Window" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
 
-    bindsym space floating toggle
-    bindsym Mod4+space floating toggle
+    bindsym space floating toggle; mode default
+    bindsym Mod4+space floating toggle; mode default
 
     bindsym Left move left
     bindsym Mod4+Left move left
