@@ -3,7 +3,7 @@
 ###############################################################################
 
 exec "numlockx"
-exec_always "feh --bg-fill ~/background.png"
+exec_always "feh --bg-fill ~/git/config/background.png"
 
 exec_always "compton -b"
 exec_always "setxkbmap -layout gb"
@@ -613,8 +613,8 @@ mode "Lock?" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
 
-    bindsym l exec i3lock -feti ~/lock.png -c 404040; mode default
-    bindsym Mod4+l exec i3lock -feti ~/lock.png -c 404040; mode default
+    bindsym l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
+    bindsym Mod4+l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
 }
 
 mode "Enter night mode?" {

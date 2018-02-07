@@ -10,3 +10,4 @@ PS1='[\u@\h \W]\$ '
 
 export EDITOR=nano
 export RANGER_LOAD_DEFAULT_RC=FALSE
+TERM=xterm
