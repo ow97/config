@@ -598,6 +598,15 @@ mode "Position Window" {
     bindsym Mod4+Right move right
 }
 
+mode "Resize" {
+    bindsym Escape mode "default"
+
+    bindsym Left        resize shrink width 10 px or 1 ppt
+    bindsym Up          resize grow height 10 px or 1 ppt
+    bindsym Down        resize shrink height 10 px or 1 ppt
+    bindsym Right       resize grow width 10 px or 1 ppt
+}
+
 mode "Quit?" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
@@ -645,13 +654,4 @@ mode "Night (Black)" {
 
     bindsym --whole-window button4 exec pactl set-sink-volume 0 +1%
     bindsym --whole-window button5 exec pactl set-sink-volume 0 -1%
-}
-
-mode "Resize" {
-    bindsym Escape mode "default"
-
-    bindsym Left        resize shrink width 10 px or 1 ppt
-    bindsym Up          resize grow height 10 px or 1 ppt
-    bindsym Down        resize shrink height 10 px or 1 ppt
-    bindsym Right       resize grow width 10 px or 1 ppt
 }
