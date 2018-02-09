@@ -38,5 +38,3 @@ then
 	pactl set-sink-volume 0 20%
 	i3-msg mode default
 fi
-
-
