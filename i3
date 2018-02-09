@@ -98,7 +98,7 @@ bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
 # Monitor connection hotkey
-bindsym Mod4+F8 exec "sh ~/git/config/monitorhotplug"
+bindsym Mod4+F8 exec "bash ~/git/config/monitorhotplug"
 
 bindsym Mod4+F11 fullscreen toggle
 
@@ -630,14 +630,14 @@ mode "Enter night mode?" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
 
-    bindsym z exec light -S 1; exec light -k -S 0; exec pactl set-sink-volume 0 5%; mode "Night"
-    bindsym Mod4+z exec light -S 1; exec light -k -S 0; exec pactl set-sink-volume 0 5%; mode "Night"
+    bindsym z exec "bash ~/git/config/night.sh --night"
+    bindsym Mod4+z exec "bash ~/git/config/night.sh --night"
 }
 
 mode "Night" {
-    bindsym Escape exec light -k -S 50; mode default
+    bindsym Escape exec "bash ~/git/config/night.sh --day"
 
-    bindsym space exec light -S 0; mode "Night (Black)"
+    bindsym space "bash ~/git/config/night.sh --black"
 
     bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
@@ -647,7 +647,9 @@ mode "Night" {
 }
 
 mode "Night (Black)" {
-    bindsym space exec light -S 1; mode "Night"
+    bindsym Escape exec "bash ~/git/config/night.sh --day"
+
+    bindsym space exec "bash ~/git/config/night.sh --night"
 
     bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
