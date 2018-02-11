@@ -637,7 +637,7 @@ mode "Enter night mode?" {
 mode "Night" {
     bindsym Escape exec "bash ~/git/config/night.sh --day"
 
-    bindsym space "bash ~/git/config/night.sh --black"
+    bindsym space exec "bash ~/git/config/night.sh --black"
 
     bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
