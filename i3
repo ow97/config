@@ -230,6 +230,8 @@ mode "Command" {
 mode "Execute" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym 1 mode default
     bindsym Mod4+1 mode default
@@ -308,6 +310,8 @@ mode "Execute" {
 mode "Workspace" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
@@ -400,6 +404,8 @@ mode "Workspace" {
 mode "Move Window" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym space exec i3-input -F 'move container to workspace "%s"' -P 'Destination workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'move container to workspace "%s"' -P 'Destination workspace name: '; mode default
@@ -485,6 +491,8 @@ mode "Move Window" {
 mode "Move and Follow" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym space exec "i3-input -F 'move container to workspace %s; workspace %s' -P 'Destination workspace name: '"; mode default
     bindsym Mod4+space exec "i3-input -F 'move container to workspace %s; workspace %s' -P 'Destination workspace name: '"; mode default
@@ -570,6 +578,8 @@ mode "Move and Follow" {
 mode "Change Focus" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym Left focus left
     bindsym Mod4+Left focus left
@@ -584,6 +594,8 @@ mode "Change Focus" {
 mode "Position Window" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym space floating toggle; mode default
     bindsym Mod4+space floating toggle; mode default
@@ -599,7 +611,10 @@ mode "Position Window" {
 }
 
 mode "Resize" {
-    bindsym Escape mode "default"
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym Left        resize shrink width 10 px or 1 ppt
     bindsym Up          resize grow height 10 px or 1 ppt
@@ -610,9 +625,14 @@ mode "Resize" {
 mode "Quit?" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym q kill; mode default
     bindsym Mod4+q kill; mode default
+
+    bindsym m kill
+    bindsym Mod4+m kill
 
     bindsym k exec "termite --exec=xkill"; mode default
     bindsym Mod4+k exec "termite -exec=xkill"; mode default
@@ -621,6 +641,8 @@ mode "Quit?" {
 mode "Lock?" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
     bindsym Mod4+l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
@@ -629,6 +651,8 @@ mode "Lock?" {
 mode "Enter night mode?" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym z exec "bash ~/git/config/night.sh --night"
     bindsym Mod4+z exec "bash ~/git/config/night.sh --night"
