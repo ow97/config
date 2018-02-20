@@ -2,7 +2,6 @@
 # Startup
 ###############################################################################
 
-exec "numlockx"
 exec_always "feh --bg-fill ~/git/config/background.png"
 
 exec_always "compton -b"
@@ -163,9 +162,9 @@ mode "Command" {
 
     bindsym F5 restart
 
-    bindsym Tab workspace back_and_forth; mode default
-    bindsym grave workspace prev
-    bindsym BackSpace workspace next
+    bindsym Tab workspace back_and_forth; mode default;
+    bindsym grave workspace prev; mode default;
+    bindsym BackSpace workspace next; mode default;
 
     # Monitor connection hotkey
     bindsym F8 exec "sh ~/git/config/monitorhotplug"
@@ -316,12 +315,12 @@ mode "Workspace" {
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
 
-    bindsym Tab workspace back_and_forth; mode default
-    bindsym Mod4+Tab workspace back_and_forth; mode default
-    bindsym grave workspace prev; mode default
-    bindsym Mod4+grave workspace prev; mode default
-    bindsym BackSpace workspace next; mode default
-    bindsym Mod4+BackSpace workspace next; mode default
+    bindsym Tab workspace back_and_forth
+    bindsym Mod4+Tab workspace back_and_forth
+    bindsym grave workspace prev
+    bindsym Mod4+grave workspace prev
+    bindsym BackSpace workspace next
+    bindsym Mod4+BackSpace workspace next
 
     bindsym 1 workspace 1; mode default
     bindsym Mod4+1 workspace 1; mode default
