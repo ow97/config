@@ -113,7 +113,7 @@ bindsym Mod4+9 mode default
 bindsym Mod4+0 mode default
 bindsym Mod4+a mode default
 bindsym Mod4+b move workspace to output eDP-1
-bindsym Mod4+c mode default
+bindsym Mod4+c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
 bindsym Mod4+d exec "rofi -show drun"
 bindsym Mod4+e mode "Execute"
 bindsym Mod4+f mode "Change Focus"
@@ -182,7 +182,7 @@ mode "Command" {
     bindsym 0 mode default
     bindsym a mode default
     bindsym b move workspace to output eDP-1
-    bindsym c mode default
+    bindsym c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
     bindsym d exec "rofi -show drun"; mode default
     bindsym e mode "Execute"
     bindsym f mode "Change Focus"
