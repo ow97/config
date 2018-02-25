@@ -28,7 +28,7 @@ interval=1
 [cpu_usage -w 25 -c 90]
 label=CPU
 interval=1
-min_width=CPU: 100.00%
+min_width=CPU 100.00%
 align=center
 separator=false
 

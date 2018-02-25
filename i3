@@ -65,7 +65,7 @@ bar {
 ###############################################################################
 
 # Printscreen
-bindsym Print exec "sh ~/git/config/screenshot"
+bindsym Print exec bash ~/git/config/screenshot.sh
 
 # Volume keys
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
@@ -97,7 +97,7 @@ bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
 # Monitor connection hotkey
-bindsym Mod4+F8 exec "bash ~/git/config/monitorhotplug"
+bindsym Mod4+F8 exec bash ~/git/config/monitorhotplug.sh
 
 bindsym Mod4+F11 fullscreen toggle
 
@@ -167,7 +167,7 @@ mode "Command" {
     bindsym BackSpace workspace next; mode default;
 
     # Monitor connection hotkey
-    bindsym F8 exec "sh ~/git/config/monitorhotplug"
+    bindsym F8 exec bash ~/git/config/monitorhotplug.sh
     bindsym F11 fullscreen toggle; mode default
 
     bindsym 1 mode default
@@ -645,6 +645,9 @@ mode "Lock?" {
 
     bindsym l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
     bindsym Mod4+l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
+
+    bindsym b exec light -S 0
+    bindsym Mod4+b exec light -S 0
 }
 
 mode "Enter night mode?" {

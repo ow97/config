@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ "$1" == "--night" ]
 then
 	# Wait for charger to be plugged in
