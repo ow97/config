@@ -3,8 +3,8 @@ separator_block_width=25
 markup=none
 
 [window title]
-command=xdotool getactivewindow getwindowname
-interval=1
+command=xtitle -s
+interval=persist
 
 [ssid]
 command=iwgetid -r
