@@ -14,23 +14,18 @@ exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 # Configuration
 ###############################################################################
 
-# Require click to refocus window
 focus_follows_mouse no
 
-# Set font
 font pango:Roboto 8
 
-# Use Mouse+$mod to drag floating windows
 floating_modifier Mod4
 
-# Set gap sizes
 gaps inner 10
 gaps outer -5
 
-# Hide gaps when there is only a single window
 smart_gaps true
 
-# Hide all windows borders
+# Hide windows borders
 new_window none
 new_float none
 
@@ -38,8 +33,6 @@ new_float none
 # Bar
 ###############################################################################
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
     i3bar_command i3bar -t
     status_command i3blocks
@@ -61,23 +54,6 @@ bar {
 }
 
 ###############################################################################
-# Key bindings
-###############################################################################
-
-# Printscreen
-bindsym Print exec bash ~/git/config/screenshot.sh
-
-# Volume keys
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
-bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
-
-# Mouse button keys to click events
-bindsym Pointer_Button1 exec "xdotool click 1"
-bindsym Pointer_Button2 exec "xdotool click 2"
-bindsym Pointer_Button3 exec "xdotool click 3"
-
-###############################################################################
 # Window styles
 ###############################################################################
 
@@ -85,21 +61,31 @@ for_window [class="Wicd"] floating enable
 for_window [class="Pavucontrol"] floating enable
 
 ###############################################################################
-# Command structure
+# Key bindings
 ###############################################################################
 
-bindsym ISO_Level3_Shift mode "Command"
+bindsym Pointer_Button1 exec "xdotool click 1"
+bindsym Pointer_Button2 exec "xdotool click 2"
+bindsym Pointer_Button3 exec "xdotool click 3"
+
+bindsym Print exec bash ~/git/config/screenshot.sh
+
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
+
+bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
+bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
+
+bindsym Mod4+F8 exec bash ~/git/config/monitorhotplug.sh
 
 bindsym Mod4+F5 restart
+
+bindsym Mod4+F11 fullscreen toggle
 
 bindsym Mod4+Tab workspace back_and_forth
 bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
-
-# Monitor connection hotkey
-bindsym Mod4+F8 exec bash ~/git/config/monitorhotplug.sh
-
-bindsym Mod4+F11 fullscreen toggle
 
 bindsym Mod4+1 mode default
 bindsym Mod4+2 mode default
@@ -141,7 +127,6 @@ bindsym Mod4+z mode "Enter night mode?"
 bindsym Mod4+Return exec termite
 bindsym Mod4+KP_Enter exec termite
 
-# Focus move
 bindsym Mod4+Left focus left
 bindsym Mod4+Down focus down
 bindsym Mod4+Up focus up
@@ -152,9 +137,7 @@ bindsym Mod4+Shift+Down move down
 bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
 
-# Use volume rocker to change brightness
-bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
-bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
+bindsym ISO_Level3_Shift mode "Command"
 
 mode "Command" {
     bindsym Escape mode default
@@ -162,13 +145,13 @@ mode "Command" {
 
     bindsym F5 restart
 
+    bindsym F8 exec bash ~/git/config/monitorhotplug.sh
+
+    bindsym F11 fullscreen toggle; mode default
+
     bindsym Tab workspace back_and_forth; mode default;
     bindsym grave workspace prev; mode default;
     bindsym BackSpace workspace next; mode default;
-
-    # Monitor connection hotkey
-    bindsym F8 exec bash ~/git/config/monitorhotplug.sh
-    bindsym F11 fullscreen toggle; mode default
 
     bindsym 1 mode default
     bindsym 2 mode default
@@ -210,7 +193,6 @@ mode "Command" {
     bindsym Return exec termite; mode default
     bindsym KP_Enter exec termite; mode default
 
-    # Focus move
     bindsym Left focus left; mode default
     bindsym Down focus down; mode default
     bindsym Up focus up; mode default
@@ -221,7 +203,6 @@ mode "Command" {
     bindsym Shift+Up move up; mode default
     bindsym Shift+Right move right; mode default
 
-    # Use volume rocker to change brightness
     bindsym XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
     bindsym XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 }
@@ -232,26 +213,6 @@ mode "Execute" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym 1 mode default
-    bindsym Mod4+1 mode default
-    bindsym 2 mode default
-    bindsym Mod4+2 mode default
-    bindsym 3 mode default
-    bindsym Mod4+3 mode default
-    bindsym 4 mode default
-    bindsym Mod4+4 mode default
-    bindsym 5 mode default
-    bindsym Mod4+5 mode default
-    bindsym 6 mode default
-    bindsym Mod4+6 mode default
-    bindsym 7 mode default
-    bindsym Mod4+7 mode default
-    bindsym 8 mode default
-    bindsym Mod4+8 mode default
-    bindsym 9 mode default
-    bindsym Mod4+9 mode default
-    bindsym 0 mode default
-    bindsym Mod4+0 mode default
     bindsym a exec atom; mode default
     bindsym Mod4+a exec atom; mode default
     bindsym b exec chromium; mode default
@@ -290,8 +251,8 @@ mode "Execute" {
     bindsym Mod4+r mode default
     bindsym s mode default
     bindsym Mod4+s mode default
-    bindsym t exec termite; mode default
-    bindsym Mod4+t exec termite; mode default
+    bindsym t exec tor-browser; mode default
+    bindsym Mod4+t exec tor-browser; mode default
     bindsym u mode default
     bindsym Mod4+u mode default
     bindsym v exec pavucontrol; mode default
@@ -615,10 +576,10 @@ mode "Resize" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym Left        resize shrink width 10 px or 1 ppt
-    bindsym Up          resize grow height 10 px or 1 ppt
-    bindsym Down        resize shrink height 10 px or 1 ppt
-    bindsym Right       resize grow width 10 px or 1 ppt
+    bindsym Left  resize shrink width 10 px or 1 ppt
+    bindsym Up    resize grow height 10 px or 1 ppt
+    bindsym Down  resize shrink height 10 px or 1 ppt
+    bindsym Right resize grow width 10 px or 1 ppt
 }
 
 mode "Quit?" {
@@ -643,14 +604,14 @@ mode "Lock?" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
-    bindsym Mod4+l exec i3lock -feti ~/git/config/lock.png -c 404040; mode default
+    bindsym l exec "i3lock -feti ~/git/config/lock.png -c 404040"; mode default
+    bindsym Mod4+l exec "i3lock -feti ~/git/config/lock.png -c 404040"; mode default
 
     bindsym b exec "bash ~/git/config/blank.sh"
     bindsym Mod4+b exec "bash ~/git/config/blank.sh"
 
-    bindsym s exec "systemctl suspend"
-    bindsym Mod4+s exec "systemctl suspend"
+    bindsym s exec "systemctl suspend"; mode default;
+    bindsym Mod4+s exec "systemctl suspend"; mode default;
 }
 
 mode "Enter night mode?" {
