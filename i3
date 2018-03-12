@@ -648,6 +648,9 @@ mode "Lock?" {
 
     bindsym b exec "bash ~/git/config/blank.sh"
     bindsym Mod4+b exec "bash ~/git/config/blank.sh"
+
+    bindsym s exec "systemctl suspend"
+    bindsym Mod4+s exec "systemctl suspend"
 }
 
 mode "Enter night mode?" {
