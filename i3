@@ -283,6 +283,13 @@ mode "Workspace" {
     bindsym BackSpace workspace next
     bindsym Mod4+BackSpace workspace next
 
+    bindsym minus workspace 98:Email; mode default
+    bindsym Mod4+minus workspace 98:Email; mode default
+    bindsym equal workspace 99:Media; mode default
+    bindsym Mod4+equal workspace 99:Media; mode default
+
+    bindsym 0 workspace 0; mode default
+    bindsym Mod4+0 workspace 0; mode default
     bindsym 1 workspace 1; mode default
     bindsym Mod4+1 workspace 1; mode default
     bindsym 2 workspace 2; mode default
@@ -301,64 +308,59 @@ mode "Workspace" {
     bindsym Mod4+8 workspace 8; mode default
     bindsym 9 workspace 9; mode default
     bindsym Mod4+9 workspace 9; mode default
-    bindsym 0 workspace 0; mode default
-    bindsym Mod4+0 workspace 0; mode default
-    bindsym minus workspace Email; mode default
-    bindsym Mod4+minus workspace Email; mode default
-    bindsym equal workspace Media; mode default
-    bindsym Mod4+equal workspace Media; mode default
-    bindsym a workspace A; mode default
-    bindsym Mod4+a workspace A; mode default
-    bindsym b workspace B; mode default
-    bindsym Mod4+b workspace B; mode default
-    bindsym c workspace C; mode default
-    bindsym Mod4+c workspace C; mode default
-    bindsym d workspace D; mode default
-    bindsym Mod4+d workspace D; mode default
-    bindsym e workspace E; mode default
-    bindsym Mod4+e workspace E; mode default
-    bindsym f workspace F; mode default
-    bindsym Mod4+f workspace F; mode default
-    bindsym g workspace G; mode default
-    bindsym Mod4+g workspace G; mode default
-    bindsym h workspace H; mode default
-    bindsym Mod4+h workspace H; mode default
-    bindsym i workspace I; mode default
-    bindsym Mod4+i workspace I; mode default
-    bindsym j workspace J; mode default
-    bindsym Mod4+j workspace J; mode default
-    bindsym k workspace K; mode default
-    bindsym Mod4+k workspace K; mode default
-    bindsym l workspace L; mode default
-    bindsym Mod4+l workspace L; mode default
-    bindsym m workspace M; mode default
-    bindsym Mod4+m workspace M; mode default
-    bindsym n workspace N; mode default
-    bindsym Mod4+n workspace N; mode default
-    bindsym o workspace O; mode default
-    bindsym Mod4+o workspace O; mode default
-    bindsym p workspace P; mode default
-    bindsym Mod4+p workspace P; mode default
-    bindsym q workspace Q; mode default
-    bindsym Mod4+q workspace Q; mode default
-    bindsym r workspace R; mode default
-    bindsym Mod4+r workspace R; mode default
-    bindsym s workspace S; mode default
-    bindsym Mod4+s workspace S; mode default
-    bindsym t workspace T; mode default
-    bindsym Mod4+t workspace T; mode default
-    bindsym u workspace U; mode default
-    bindsym Mod4+u workspace U; mode default
-    bindsym v workspace V; mode default
-    bindsym Mod4+v workspace V; mode default
-    bindsym w workspace W; mode default
-    bindsym Mod4+w workspace W; mode default
-    bindsym x workspace X; mode default
-    bindsym Mod4+x workspace X; mode default
-    bindsym y workspace Y; mode default
-    bindsym Mod4+y workspace Y; mode default
-    bindsym z workspace Z; mode default
-    bindsym Mod4+z workspace Z; mode default
+
+    bindsym a workspace 10:A; mode default
+    bindsym Mod4+a workspace 10:A; mode default
+    bindsym b workspace 11:B; mode default
+    bindsym Mod4+b workspace 11:B; mode default
+    bindsym c workspace 12:C; mode default
+    bindsym Mod4+c workspace 12:C; mode default
+    bindsym d workspace 13:D; mode default
+    bindsym Mod4+d workspace 13:D; mode default
+    bindsym e workspace 14:E; mode default
+    bindsym Mod4+e workspace 14:E; mode default
+    bindsym f workspace 15:F; mode default
+    bindsym Mod4+f workspace 15:F; mode default
+    bindsym g workspace 16:G; mode default
+    bindsym Mod4+g workspace 16:G; mode default
+    bindsym h workspace 17:H; mode default
+    bindsym Mod4+h workspace 17:H; mode default
+    bindsym i workspace 18:I; mode default
+    bindsym Mod4+i workspace 18:I; mode default
+    bindsym j workspace 19:J; mode default
+    bindsym Mod4+j workspace 19:J; mode default
+    bindsym k workspace 20:K; mode default
+    bindsym Mod4+k workspace 20:K; mode default
+    bindsym l workspace 21:L; mode default
+    bindsym Mod4+l workspace 21:L; mode default
+    bindsym m workspace 22:M; mode default
+    bindsym Mod4+m workspace 22:M; mode default
+    bindsym n workspace 23:N; mode default
+    bindsym Mod4+n workspace 23:N; mode default
+    bindsym o workspace 24:O; mode default
+    bindsym Mod4+o workspace 24:O; mode default
+    bindsym p workspace 25:P; mode default
+    bindsym Mod4+p workspace 25:P; mode default
+    bindsym q workspace 26:Q; mode default
+    bindsym Mod4+q workspace 26:Q; mode default
+    bindsym r workspace 27:R; mode default
+    bindsym Mod4+r workspace 27:R; mode default
+    bindsym s workspace 28:S; mode default
+    bindsym Mod4+s workspace 28:S; mode default
+    bindsym t workspace 29:T; mode default
+    bindsym Mod4+t workspace 29:T; mode default
+    bindsym u workspace 30:U; mode default
+    bindsym Mod4+u workspace 30:U; mode default
+    bindsym v workspace 31:V; mode default
+    bindsym Mod4+v workspace 31:V; mode default
+    bindsym w workspace 32:W; mode default
+    bindsym Mod4+w workspace 32:W; mode default
+    bindsym x workspace 33:X; mode default
+    bindsym Mod4+x workspace 33:X; mode default
+    bindsym y workspace 34:Y; mode default
+    bindsym Mod4+y workspace 34:Y; mode default
+    bindsym z workspace 35:Z; mode default
+    bindsym Mod4+z workspace 35:Z; mode default
 }
 
 mode "Move Window" {
@@ -370,6 +372,13 @@ mode "Move Window" {
     bindsym space exec i3-input -F 'move container to workspace "%s"' -P 'Destination workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'move container to workspace "%s"' -P 'Destination workspace name: '; mode default
 
+    bindsym minus move container to workspace 98:Email; mode default
+    bindsym Mod4+minus move container to workspace 98:Email; mode default
+    bindsym equal move container to workspace 99:Media; mode default
+    bindsym Mod4+equal move container to workspace 99:Media; mode default
+
+    bindsym 0 move container to workspace 0; mode default
+    bindsym Mod4+0 move container to workspace 0; mode default
     bindsym 1 move container to workspace 1; mode default
     bindsym Mod4+1 move container to workspace 1; mode default
     bindsym 2 move container to workspace 2; mode default
@@ -388,64 +397,59 @@ mode "Move Window" {
     bindsym Mod4+8 move container to workspace 8; mode default
     bindsym 9 move container to workspace 9; mode default
     bindsym Mod4+9 move container to workspace 9; mode default
-    bindsym 0 move container to workspace 0; mode default
-    bindsym Mod4+0 move container to workspace 0; mode default
-    bindsym minus move container to workspace Email; mode default
-    bindsym Mod4+minus move container to workspace Email; mode default
-    bindsym equal move container to workspace Media; mode default
-    bindsym Mod4+equal move container to workspace Media; mode default
-    bindsym a move container to workspace A; mode default
-    bindsym Mod4+a move container to workspace A; mode default
-    bindsym b move container to workspace B; mode default
-    bindsym Mod4+b move container to workspace B; mode default
-    bindsym c move container to workspace C; mode default
-    bindsym Mod4+c move container to workspace C; mode default
-    bindsym d move container to workspace D; mode default
-    bindsym Mod4+d move container to workspace D; mode default
-    bindsym e move container to workspace E; mode default
-    bindsym Mod4+e move container to workspace E; mode default
-    bindsym f move container to workspace F; mode default
-    bindsym Mod4+f move container to workspace F; mode default
-    bindsym g move container to workspace G; mode default
-    bindsym Mod4+g move container to workspace G; mode default
-    bindsym h move container to workspace H; mode default
-    bindsym Mod4+h move container to workspace H; mode default
-    bindsym i move container to workspace I; mode default
-    bindsym Mod4+i move container to workspace I; mode default
-    bindsym j move container to workspace J; mode default
-    bindsym Mod4+j move container to workspace J; mode default
-    bindsym k move container to workspace K; mode default
-    bindsym Mod4+k move container to workspace K; mode default
-    bindsym l move container to workspace L; mode default
-    bindsym Mod4+l move container to workspace L; mode default
-    bindsym m move container to workspace M; mode default
-    bindsym Mod4+m move container to workspace M; mode default
-    bindsym n move container to workspace N; mode default
-    bindsym Mod4+n move container to workspace N; mode default
-    bindsym o move container to workspace O; mode default
-    bindsym Mod4+o move container to workspace O; mode default
-    bindsym p move container to workspace P; mode default
-    bindsym Mod4+p move container to workspace P; mode default
-    bindsym q move container to workspace Q; mode default
-    bindsym Mod4+q move container to workspace Q; mode default
-    bindsym r move container to workspace R; mode default
-    bindsym Mod4+r move container to workspace R; mode default
-    bindsym s move container to workspace S; mode default
-    bindsym Mod4+s move container to workspace S; mode default
-    bindsym t move container to workspace T; mode default
-    bindsym Mod4+t move container to workspace T; mode default
-    bindsym u move container to workspace U; mode default
-    bindsym Mod4+u move container to workspace U; mode default
-    bindsym v move container to workspace V; mode default
-    bindsym Mod4+v move container to workspace V; mode default
-    bindsym w move container to workspace W; mode default
-    bindsym Mod4+w move container to workspace W; mode default
-    bindsym x move container to workspace X; mode default
-    bindsym Mod4+x move container to workspace X; mode default
-    bindsym y move container to workspace Y; mode default
-    bindsym Mod4+y move container to workspace Y; mode default
-    bindsym z move container to workspace Z; mode default
-    bindsym Mod4+z move container to workspace Z; mode default
+
+    bindsym a move container to workspace 10:A; mode default
+    bindsym Mod4+a move container to workspace 10:A; mode default
+    bindsym b move container to workspace 11:B; mode default
+    bindsym Mod4+b move container to workspace 11:B; mode default
+    bindsym c move container to workspace 12:C; mode default
+    bindsym Mod4+c move container to workspace 12:C; mode default
+    bindsym d move container to workspace 13:D; mode default
+    bindsym Mod4+d move container to workspace 13:D; mode default
+    bindsym e move container to workspace 14:E; mode default
+    bindsym Mod4+e move container to workspace 14:E; mode default
+    bindsym f move container to workspace 15:F; mode default
+    bindsym Mod4+f move container to workspace 15:F; mode default
+    bindsym g move container to workspace 16:G; mode default
+    bindsym Mod4+g move container to workspace 16:G; mode default
+    bindsym h move container to workspace 17:H; mode default
+    bindsym Mod4+h move container to workspace 17:H; mode default
+    bindsym i move container to workspace 18:I; mode default
+    bindsym Mod4+i move container to workspace 18:I; mode default
+    bindsym j move container to workspace 19:J; mode default
+    bindsym Mod4+j move container to workspace 19:J; mode default
+    bindsym k move container to workspace 20:K; mode default
+    bindsym Mod4+k move container to workspace 20:K; mode default
+    bindsym l move container to workspace 21:L; mode default
+    bindsym Mod4+l move container to workspace 21:L; mode default
+    bindsym m move container to workspace 22:M; mode default
+    bindsym Mod4+m move container to workspace 22:M; mode default
+    bindsym n move container to workspace 23:N; mode default
+    bindsym Mod4+n move container to workspace 23:N; mode default
+    bindsym o move container to workspace 24:O; mode default
+    bindsym Mod4+o move container to workspace 24:O; mode default
+    bindsym p move container to workspace 25:P; mode default
+    bindsym Mod4+p move container to workspace 25:P; mode default
+    bindsym q move container to workspace 26:Q; mode default
+    bindsym Mod4+q move container to workspace 26:Q; mode default
+    bindsym r move container to workspace 27:R; mode default
+    bindsym Mod4+r move container to workspace 27:R; mode default
+    bindsym s move container to workspace 28:S; mode default
+    bindsym Mod4+s move container to workspace 28:S; mode default
+    bindsym t move container to workspace 29:T; mode default
+    bindsym Mod4+t move container to workspace 29:T; mode default
+    bindsym u move container to workspace 30:U; mode default
+    bindsym Mod4+u move container to workspace 30:U; mode default
+    bindsym v move container to workspace 31:V; mode default
+    bindsym Mod4+v move container to workspace 31:V; mode default
+    bindsym w move container to workspace 32:W; mode default
+    bindsym Mod4+w move container to workspace 32:W; mode default
+    bindsym x move container to workspace 33:X; mode default
+    bindsym Mod4+x move container to workspace 33:X; mode default
+    bindsym y move container to workspace 34:Y; mode default
+    bindsym Mod4+y move container to workspace 34:Y; mode default
+    bindsym z move container to workspace 35:Z; mode default
+    bindsym Mod4+z move container to workspace 35:Z; mode default
 }
 
 mode "Move and Follow" {
@@ -457,6 +461,13 @@ mode "Move and Follow" {
     bindsym space exec "i3-input -F 'move container to workspace %s; workspace %s' -P 'Destination workspace name: '"; mode default
     bindsym Mod4+space exec "i3-input -F 'move container to workspace %s; workspace %s' -P 'Destination workspace name: '"; mode default
 
+    bindsym minus move container to workspace 98:Email; workspace 98:Email; mode default
+    bindsym Mod4+minus move container to workspace 98:Email; workspace 98:Email; mode default
+    bindsym equal move container to workspace 99:Media; workspace 99:Media; mode default
+    bindsym Mod4+equal move container to workspace 99:Media; workspace 99:Media; mode default
+
+    bindsym 0 move container to workspace 0; workspace 0; mode default
+    bindsym Mod4+0 move container to workspace 0; workspace 0; mode default
     bindsym 1 move container to workspace 1; workspace 1; mode default
     bindsym Mod4+1 move container to workspace 1; workspace 1; mode default
     bindsym 2 move container to workspace 2; workspace 2; mode default
@@ -475,64 +486,59 @@ mode "Move and Follow" {
     bindsym Mod4+8 move container to workspace 8; workspace 8; mode default
     bindsym 9 move container to workspace 9; workspace 9; mode default
     bindsym Mod4+9 move container to workspace 9; workspace 9; mode default
-    bindsym 0 move container to workspace 0; workspace 0; mode default
-    bindsym Mod4+0 move container to workspace 0; workspace 0; mode default
-    bindsym minus move container to workspace Email; workspace Email; mode default
-    bindsym Mod4+minus move container to workspace Email; workspace Email; mode default
-    bindsym equal move container to workspace Media; workspace Media; mode default
-    bindsym Mod4+equal move container to workspace Media; workspace Media; mode default
-    bindsym a move container to workspace A; workspace A; mode default
-    bindsym Mod4+a move container to workspace A; workspace A; mode default
-    bindsym b move container to workspace B; workspace B; mode default
-    bindsym Mod4+b move container to workspace B; workspace B; mode default
-    bindsym c move container to workspace C; workspace C; mode default
-    bindsym Mod4+c move container to workspace C; workspace C; mode default
-    bindsym d move container to workspace D; workspace D; mode default
-    bindsym Mod4+d move container to workspace D; workspace D; mode default
-    bindsym e move container to workspace E; workspace E; mode default
-    bindsym Mod4+e move container to workspace E; workspace E; mode default
-    bindsym f move container to workspace F; workspace F; mode default
-    bindsym Mod4+f move container to workspace F; workspace F; mode default
-    bindsym g move container to workspace G; workspace G; mode default
-    bindsym Mod4+g move container to workspace G; workspace G; mode default
-    bindsym h move container to workspace H; workspace H; mode default
-    bindsym Mod4+h move container to workspace H; workspace H; mode default
-    bindsym i move container to workspace I; workspace I; mode default
-    bindsym Mod4+i move container to workspace I; workspace I; mode default
-    bindsym j move container to workspace J; workspace J; mode default
-    bindsym Mod4+j move container to workspace J; workspace J; mode default
-    bindsym k move container to workspace K; workspace K; mode default
-    bindsym Mod4+k move container to workspace K; workspace K; mode default
-    bindsym l move container to workspace L; workspace L; mode default
-    bindsym Mod4+l move container to workspace L; workspace L; mode default
-    bindsym m move container to workspace M; workspace M; mode default
-    bindsym Mod4+m move container to workspace M; workspace M; mode default
-    bindsym n move container to workspace N; workspace N; mode default
-    bindsym Mod4+n move container to workspace N; workspace N; mode default
-    bindsym o move container to workspace O; workspace O; mode default
-    bindsym Mod4+o move container to workspace O; workspace O; mode default
-    bindsym p move container to workspace P; workspace P; mode default
-    bindsym Mod4+p move container to workspace P; workspace P; mode default
-    bindsym q move container to workspace Q; workspace Q; mode default
-    bindsym Mod4+q move container to workspace Q; workspace Q; mode default
-    bindsym r move container to workspace R; workspace R; mode default
-    bindsym Mod4+r move container to workspace R; workspace R; mode default
-    bindsym s move container to workspace S; workspace S; mode default
-    bindsym Mod4+s move container to workspace S; workspace S; mode default
-    bindsym t move container to workspace T; workspace T; mode default
-    bindsym Mod4+t move container to workspace T; workspace T; mode default
-    bindsym u move container to workspace U; workspace U; mode default
-    bindsym Mod4+u move container to workspace U; workspace U; mode default
-    bindsym v move container to workspace V; workspace V; mode default
-    bindsym Mod4+v move container to workspace V; workspace V; mode default
-    bindsym w move container to workspace W; workspace W; mode default
-    bindsym Mod4+w move container to workspace W; workspace W; mode default
-    bindsym x move container to workspace X; workspace X; mode default
-    bindsym Mod4+x move container to workspace X; workspace X; mode default
-    bindsym y move container to workspace Y; workspace Y; mode default
-    bindsym Mod4+y move container to workspace Y; workspace Y; mode default
-    bindsym z move container to workspace Z; workspace Z; mode default
-    bindsym Mod4+z move container to workspace Z; workspace Z; mode default
+
+    bindsym a move container to workspace 10:A; workspace 10:A; mode default
+    bindsym Mod4+a move container to workspace 10:A; workspace 10:A; mode default
+    bindsym b move container to workspace 11:B; workspace 11:B; mode default
+    bindsym Mod4+b move container to workspace 11:B; workspace 11:B; mode default
+    bindsym c move container to workspace 12:C; workspace 12:C; mode default
+    bindsym Mod4+c move container to workspace 12:C; workspace 12:C; mode default
+    bindsym d move container to workspace 13:D; workspace 13:D; mode default
+    bindsym Mod4+d move container to workspace 13:D; workspace 13:D; mode default
+    bindsym e move container to workspace 14:E; workspace 14:E; mode default
+    bindsym Mod4+e move container to workspace 14:E; workspace 14:E; mode default
+    bindsym f move container to workspace 15:F; workspace 15:F; mode default
+    bindsym Mod4+f move container to workspace 15:F; workspace 15:F; mode default
+    bindsym g move container to workspace 16:G; workspace 16:G; mode default
+    bindsym Mod4+g move container to workspace 16:G; workspace 16:G; mode default
+    bindsym h move container to workspace 17:H; workspace 17:H; mode default
+    bindsym Mod4+h move container to workspace 17:H; workspace 17:H; mode default
+    bindsym i move container to workspace 18:I; workspace 18:I; mode default
+    bindsym Mod4+i move container to workspace 18:I; workspace 18:I; mode default
+    bindsym j move container to workspace 19:J; workspace 19:J; mode default
+    bindsym Mod4+j move container to workspace 19:J; workspace 19:J; mode default
+    bindsym k move container to workspace 20:K; workspace 20:K; mode default
+    bindsym Mod4+k move container to workspace 20:K; workspace 20:K; mode default
+    bindsym l move container to workspace 21:L; workspace 21:L; mode default
+    bindsym Mod4+l move container to workspace 21:L; workspace 21:L; mode default
+    bindsym m move container to workspace 22:M; workspace 22:M; mode default
+    bindsym Mod4+m move container to workspace 22:M; workspace 22:M; mode default
+    bindsym n move container to workspace 23:N; workspace 23:N; mode default
+    bindsym Mod4+n move container to workspace 23:N; workspace 23:N; mode default
+    bindsym o move container to workspace 24:O; workspace 24:O; mode default
+    bindsym Mod4+o move container to workspace 24:O; workspace 24:O; mode default
+    bindsym p move container to workspace 25:P; workspace 25:P; mode default
+    bindsym Mod4+p move container to workspace 25:P; workspace 25:P; mode default
+    bindsym q move container to workspace 26:Q; workspace 26:Q; mode default
+    bindsym Mod4+q move container to workspace 26:Q; workspace 26:Q; mode default
+    bindsym r move container to workspace 27:R; workspace 27:R; mode default
+    bindsym Mod4+r move container to workspace 27:R; workspace 27:R; mode default
+    bindsym s move container to workspace 28:S; workspace 28:S; mode default
+    bindsym Mod4+s move container to workspace 28:S; workspace 28:S; mode default
+    bindsym t move container to workspace 29:T; workspace 29:T; mode default
+    bindsym Mod4+t move container to workspace 29:T; workspace 29:T; mode default
+    bindsym u move container to workspace 30:U; workspace 30:U; mode default
+    bindsym Mod4+u move container to workspace 30:U; workspace 30:U; mode default
+    bindsym v move container to workspace 31:V; workspace 31:V; mode default
+    bindsym Mod4+v move container to workspace 31:V; workspace 31:V; mode default
+    bindsym w move container to workspace 32:W; workspace 32:W; mode default
+    bindsym Mod4+w move container to workspace 32:W; workspace 32:W; mode default
+    bindsym x move container to workspace 33:X; workspace 33:X; mode default
+    bindsym Mod4+x move container to workspace 33:X; workspace 33:X; mode default
+    bindsym y move container to workspace 34:Y; workspace 34:Y; mode default
+    bindsym Mod4+y move container to workspace 34:Y; workspace 34:Y; mode default
+    bindsym z move container to workspace 35:Z; workspace 35:Z; mode default
+    bindsym Mod4+z move container to workspace 35:Z; workspace 35:Z; mode default
 }
 
 mode "Change Focus" {
