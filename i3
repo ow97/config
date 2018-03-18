@@ -597,11 +597,18 @@ mode "Quit?" {
     bindsym q kill; mode default
     bindsym Mod4+q kill; mode default
 
+    bindsym k exec "termite --exec=xkill"; mode default
+    bindsym Mod4+k exec "termite -exec=xkill"; mode default
+
     bindsym m kill
     bindsym Mod4+m kill
 
-    bindsym k exec "termite --exec=xkill"; mode default
-    bindsym Mod4+k exec "termite -exec=xkill"; mode default
+    bindsym Tab workspace back_and_forth
+    bindsym Mod4+Tab workspace back_and_forth
+    bindsym grave workspace prev
+    bindsym Mod4+grave workspace prev
+    bindsym BackSpace workspace next
+    bindsym Mod4+BackSpace workspace next
 }
 
 mode "Lock?" {
