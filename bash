@@ -6,7 +6,9 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1="$(tput bold)[$?] \h \W > $(tput sgr0)"
+BOLD="\[$(tput bold)\]"
+RESET="\[$(tput sgr0)\]"
+PS1="${BOLD}[$?] \h \W > ${RESET}"
 
 export EDITOR=nano
 export TERM=xterm
