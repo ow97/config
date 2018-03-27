@@ -5,4 +5,5 @@ then
 else
 	xargs light -S < /tmp/brightness_value
 	rm /tmp/brightness_value
+	i3-msg mode default
 fi
