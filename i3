@@ -164,7 +164,7 @@ mode "Command" {
     bindsym 9 mode default
     bindsym 0 mode default
     bindsym a mode default
-    bindsym b move workspace to output eDP-1
+    bindsym b move workspace to output eDP-1; mode default
     bindsym c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
     bindsym d exec "rofi -show drun"; mode default
     bindsym e mode "Execute"
@@ -181,12 +181,12 @@ mode "Command" {
     bindsym p mode "Position Window"
     bindsym q mode "Quit?"
     bindsym r mode "Resize"
-    bindsym s sticky toggle
+    bindsym s sticky toggle; mode default
     bindsym t mode default
     bindsym u mode default
     bindsym v split v; mode default
     bindsym w mode "Workspace"
-    bindsym x move workspace to output HDMI-1
+    bindsym x move workspace to output HDMI-1; mode default
     bindsym y mode default
     bindsym z mode "Enter night mode?"
 
