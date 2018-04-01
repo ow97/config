@@ -620,11 +620,18 @@ mode "Lock?" {
     bindsym l exec "i3lock -feti ~/git/config/lock.png -c 404040"; mode default
     bindsym Mod4+l exec "i3lock -feti ~/git/config/lock.png -c 404040"; mode default
 
-    bindsym b exec "bash ~/git/config/blank.sh"
-    bindsym Mod4+b exec "bash ~/git/config/blank.sh"
+    bindsym b exec "bash ~/git/config/blank.sh --blank"
+    bindsym Mod4+b exec "bash ~/git/config/blank.sh --blank"
 
     bindsym s exec "systemctl suspend"; mode default;
     bindsym Mod4+s exec "systemctl suspend"; mode default;
+}
+
+mode "Blank" {
+    bindsym Escape exec "bash ~/git/config/blank.sh --show"
+
+    bindsym b exec "bash ~/git/config/blank.sh --show"
+    bindsym Mod4+b exec "bash ~/git/config/blank.sh --show"
 }
 
 mode "Enter night mode?" {
