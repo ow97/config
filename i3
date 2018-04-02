@@ -227,8 +227,8 @@ mode "Execute" {
     bindsym Mod4+f mode default
     bindsym g mode default
     bindsym Mod4+g mode default
-    bindsym h exec "termite --exec=htop"; mode default
-    bindsym Mod4+h exec "termite --exec=htop"; mode default
+    bindsym h exec "termite --exec='sudo htop'"; mode default
+    bindsym Mod4+h exec "termite --exec='sudo htop'"; mode default
     bindsym i mode default
     bindsym Mod4+i mode default
     bindsym j exec jetbrains-toolbox; mode default
