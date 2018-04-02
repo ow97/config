@@ -213,6 +213,11 @@ mode "Execute" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
+    bindsym Return exec termite; mode default
+    bindsym Mod4+Return exec termite; mode default
+    bindsym KP_Enter exec termite; mode default
+    bindsym Mod4+KP_Enter exec termite; mode default
+
     bindsym a exec atom; mode default
     bindsym Mod4+a exec atom; mode default
     bindsym b exec chromium; mode default
@@ -221,12 +226,12 @@ mode "Execute" {
     bindsym Mod4+c mode default
     bindsym d mode default
     bindsym Mod4+d mode default
-    bindsym e mode default
-    bindsym Mod4+e mode default
-    bindsym f mode default
-    bindsym Mod4+f mode default
-    bindsym g mode default
-    bindsym Mod4+g mode default
+    bindsym e exec google-earth; mode default
+    bindsym Mod4+e exec google-earth; mode default
+    bindsym f exec firefox; mode default
+    bindsym Mod4+f exec firefox; mode default
+    bindsym g exec gimp; mode default
+    bindsym Mod4+g exec gimp; mode default
     bindsym h exec "termite --exec='sudo htop'"; mode default
     bindsym Mod4+h exec "termite --exec='sudo htop'"; mode default
     bindsym i mode default
@@ -235,8 +240,8 @@ mode "Execute" {
     bindsym Mod4+j exec jetbrains-toolbox; mode default
     bindsym k mode default
     bindsym Mod4+k mode default
-    bindsym l mode default
-    bindsym Mod4+l mode default
+    bindsym l exec libreoffice; mode default
+    bindsym Mod4+l exec libreoffice; mode default
     bindsym m mode default
     bindsym Mod4+m mode default
     bindsym n mode default
