@@ -587,10 +587,61 @@ mode "Resize" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym Left  resize shrink width 10 px or 1 ppt
-    bindsym Up    resize grow height 10 px or 1 ppt
-    bindsym Down  resize shrink height 10 px or 1 ppt
-    bindsym Right resize grow width 10 px or 1 ppt
+    bindsym F mode "Resize (Fast)"
+    bindsym Mod4+F mode "Resize (Fast)"
+    bindsym N mode "Resize"
+    bindsym Mod4+N mode "Resize"
+    bindsym R mode "Resize"
+    bindsym Mod4+R mode "Resize"
+    bindsym S mode "Resize (Slow)"
+    bindsym Mod4+S mode "Resize (Slow)"
+
+    bindsym Left  resize shrink width  10 px or 2 ppt
+    bindsym Up    resize grow   height 10 px or 2 ppt
+    bindsym Down  resize shrink height 10 px or 2 ppt
+    bindsym Right resize grow   width  10 px or 2 ppt
+}
+
+mode "Resize (Slow)" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
+
+    bindsym F mode "Resize (Fast)"
+    bindsym Mod4+F mode "Resize (Fast)"
+    bindsym N mode "Resize"
+    bindsym Mod4+N mode "Resize"
+    bindsym R mode "Resize"
+    bindsym Mod4+R mode "Resize"
+    bindsym S mode "Resize"
+    bindsym Mod4+S mode "Resize"
+
+    bindsym Left  resize shrink width  1 px or 1 ppt
+    bindsym Up    resize grow   height 1 px or 1 ppt
+    bindsym Down  resize shrink height 1 px or 1 ppt
+    bindsym Right resize grow   width  1 px or 1 ppt
+}
+
+mode "Resize (Fast)" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
+
+    bindsym F mode "Resize"
+    bindsym Mod4+F mode "Resize"
+    bindsym N mode "Resize"
+    bindsym Mod4+N mode "Resize"
+    bindsym R mode "Resize"
+    bindsym Mod4+R mode "Resize"
+    bindsym S mode "Resize (Slow)"
+    bindsym Mod4+S mode "Resize (Slow)"
+
+    bindsym Left  resize shrink width  50 px or 5 ppt
+    bindsym Up    resize grow   height 50 px or 5 ppt
+    bindsym Down  resize shrink height 50 px or 5 ppt
+    bindsym Right resize grow   width  50 px or 5 ppt
 }
 
 mode "Quit?" {
