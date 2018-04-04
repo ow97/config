@@ -1,6 +1,6 @@
 ################################ Startup ################################
 
-exec_always "feh --bg-fill ~/git/config/background.png"
+exec_always "feh --bg-fill ~/git/config/img/background.png"
 
 exec_always "compton -b"
 exec_always "setxkbmap -layout gb"
@@ -58,7 +58,7 @@ bindsym Pointer_Button1 exec "xdotool click 1"
 bindsym Pointer_Button2 exec "xdotool click 2"
 bindsym Pointer_Button3 exec "xdotool click 3"
 
-bindsym Print exec bash ~/git/config/screenshot.sh
+bindsym Print exec "bash ~/git/config/scripts/screenshot.sh"
 
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
 bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
@@ -67,7 +67,7 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
 bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 
-bindsym Mod4+F8 exec bash ~/git/config/monitorhotplug.sh
+bindsym Mod4+F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
 
 bindsym Mod4+F5 restart
 
@@ -135,7 +135,7 @@ mode "Command" {
 
     bindsym F5 restart
 
-    bindsym F8 exec bash ~/git/config/monitorhotplug.sh
+    bindsym F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
 
     bindsym F11 fullscreen toggle; mode default
 
@@ -663,21 +663,21 @@ mode "Lock?" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym l exec "i3lock -feti ~/git/config/lock.png -c 404040"; mode default
-    bindsym Mod4+l exec "i3lock -feti ~/git/config/lock.png -c 404040"; mode default
+    bindsym l exec "i3lock -feti ~/git/config/img/lock.png -c 404040"; mode default
+    bindsym Mod4+l exec "i3lock -feti ~/git/config/img/lock.png -c 404040"; mode default
 
-    bindsym b exec "bash ~/git/config/blank.sh --blank"
-    bindsym Mod4+b exec "bash ~/git/config/blank.sh --blank"
+    bindsym b exec "bash ~/git/config/scripts/blank.sh --blank"
+    bindsym Mod4+b exec "bash ~/git/config/scripts/blank.sh --blank"
 
     bindsym s exec "systemctl suspend"; mode default;
     bindsym Mod4+s exec "systemctl suspend"; mode default;
 }
 
 mode "Blank" {
-    bindsym Escape exec "bash ~/git/config/blank.sh --show"
+    bindsym Escape exec "bash ~/git/config/scripts/blank.sh --show"
 
-    bindsym b exec "bash ~/git/config/blank.sh --show"
-    bindsym Mod4+b exec "bash ~/git/config/blank.sh --show"
+    bindsym b exec "bash ~/git/config/scripts/blank.sh --show"
+    bindsym Mod4+b exec "bash ~/git/config/scripts/blank.sh --show"
 }
 
 mode "Enter night mode?" {
@@ -686,14 +686,14 @@ mode "Enter night mode?" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym z exec "bash ~/git/config/night.sh --night"
-    bindsym Mod4+z exec "bash ~/git/config/night.sh --night"
+    bindsym z exec "bash ~/git/config/scripts/night.sh --night"
+    bindsym Mod4+z exec "bash ~/git/config/scripts/night.sh --night"
 }
 
 mode "Night" {
-    bindsym Escape exec "bash ~/git/config/night.sh --day"
+    bindsym Escape exec "bash ~/git/config/scripts/night.sh --day"
 
-    bindsym space exec "bash ~/git/config/night.sh --black"
+    bindsym space exec "bash ~/git/config/scripts/night.sh --black"
 
     bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
@@ -703,9 +703,9 @@ mode "Night" {
 }
 
 mode "Night (Black)" {
-    bindsym Escape exec "bash ~/git/config/night.sh --day"
+    bindsym Escape exec "bash ~/git/config/scripts/night.sh --day"
 
-    bindsym space exec "bash ~/git/config/night.sh --night"
+    bindsym space exec "bash ~/git/config/scripts/night.sh --night"
 
     bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
