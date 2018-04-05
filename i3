@@ -69,7 +69,8 @@ bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xarg
 
 bindsym Mod4+F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
 
-bindsym Mod4+F5 restart
+bindsym Mod4+F5 reload
+bindsym Mod4+F6 restart
 
 bindsym Mod4+F11 fullscreen toggle
 
@@ -135,7 +136,8 @@ mode "Command" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym F5 restart
+    bindsym F5 reload
+    bindsym F6 restart
 
     bindsym F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
 
