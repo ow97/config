@@ -106,7 +106,7 @@ bindsym Mod4+p mode "Position Window"
 bindsym Mod4+q mode "Quit?"
 bindsym Mod4+r mode "Resize"
 bindsym Mod4+s sticky toggle
-bindsym Mod4+t mode default
+bindsym Mod4+t mode "Navigate Tree"
 bindsym Mod4+u mode default
 bindsym Mod4+v split v
 bindsym Mod4+w mode "Workspace"
@@ -131,7 +131,9 @@ bindsym ISO_Level3_Shift mode "Command"
 
 mode "Command" {
     bindsym Escape mode default
+    bindsym Mod4+Escape mode default
     bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
 
     bindsym F5 restart
 
@@ -172,7 +174,7 @@ mode "Command" {
     bindsym q mode "Quit?"
     bindsym r mode "Resize"
     bindsym s sticky toggle; mode default
-    bindsym t mode default
+    bindsym t mode "Navigate Tree"
     bindsym u mode default
     bindsym v split v; mode default
     bindsym w mode "Workspace"
@@ -550,6 +552,16 @@ mode "Change Focus" {
     bindsym Mod4+Up focus up
     bindsym Right focus right
     bindsym Mod4+Right focus right
+
+    bindsym p focus parent
+    bindsym Mod4+p focus parent
+    bindsym p focus child
+    bindsym Mod4+p focus child
+
+    bindsym f focus floating
+    bindsym Mod4+f focus floating
+    bindsym t focus tiling
+    bindsym Mod4+t focus tiling
 }
 
 mode "Position Window" {
@@ -678,6 +690,15 @@ mode "Blank" {
 
     bindsym b exec "bash ~/git/config/scripts/blank.sh --show"
     bindsym Mod4+b exec "bash ~/git/config/scripts/blank.sh --show"
+}
+
+mode "Navigate Tree" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
+
+    bindsym Up focus parent
 }
 
 mode "Enter night mode?" {
