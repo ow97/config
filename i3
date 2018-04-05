@@ -707,15 +707,6 @@ mode "Blank" {
     bindsym Mod4+b exec "bash ~/git/config/scripts/blank.sh --show"
 }
 
-mode "Navigate Tree" {
-    bindsym Escape mode default
-    bindsym Mod4+Escape mode default
-    bindsym ISO_Level3_Shift mode default
-    bindsym Mod4+ISO_Level3_Shift mode default
-
-    bindsym Up focus parent
-}
-
 mode "Enter night mode?" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
