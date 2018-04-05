@@ -58,14 +58,14 @@ bindsym Pointer_Button1 exec "xdotool click 1"
 bindsym Pointer_Button2 exec "xdotool click 2"
 bindsym Pointer_Button3 exec "xdotool click 3"
 
-bindsym Print exec "bash ~/git/config/scripts/screenshot.sh"
-
-bindsym Mod4+F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
-
 bindsym Mod4+F5 reload
 bindsym Mod4+F6 restart
 
+bindsym Mod4+F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
+
 bindsym Mod4+F11 fullscreen toggle
+
+bindsym Print exec "bash ~/git/config/scripts/screenshot.sh"
 
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
 bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
