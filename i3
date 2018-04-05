@@ -553,15 +553,15 @@ mode "Change Focus" {
     bindsym Right focus right
     bindsym Mod4+Right focus right
 
-    bindsym p focus parent
-    bindsym Mod4+p focus parent
-    bindsym p focus child
-    bindsym Mod4+p focus child
+    bindsym p focus parent; mode default
+    bindsym Mod4+p focus parent; mode default
+    bindsym p focus child; mode default
+    bindsym Mod4+p focus child; mode default
 
-    bindsym f focus floating
-    bindsym Mod4+f focus floating
-    bindsym t focus tiling
-    bindsym Mod4+t focus tiling
+    bindsym f focus floating; mode default
+    bindsym Mod4+f focus floating; mode default
+    bindsym t focus tiling; mode default
+    bindsym Mod4+t focus tiling; mode default
 }
 
 mode "Position Window" {
@@ -569,9 +569,6 @@ mode "Position Window" {
     bindsym Mod4+Escape mode default
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
-
-    bindsym space floating toggle; mode default
-    bindsym Mod4+space floating toggle; mode default
 
     bindsym Left move left
     bindsym Mod4+Left move left
@@ -581,6 +578,16 @@ mode "Position Window" {
     bindsym Mod4+Up move up
     bindsym Right move right
     bindsym Mod4+Right move right
+
+    bindsym space floating toggle; mode default
+    bindsym Mod4+space floating toggle; mode default
+    bindsym f floating toggle; mode default
+    bindsym Mod4+f floating toggle; mode default
+
+    bindsym c move position center; mode default
+    bindsym Mod4+c move position center; mode default
+    bindsym m move position mouse; mode default
+    bindsym Mod4+m move position mouse; mode default
 }
 
 mode "Resize" {
