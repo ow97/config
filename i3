@@ -183,7 +183,7 @@ mode "Command" {
     bindsym r mode "Resize"
     bindsym s sticky toggle; mode default
     bindsym t mode default
-    bindsym u [urgent="latest"] focus
+    bindsym u [urgent="latest"] focus; mode default
     bindsym v split v; mode default
     bindsym w mode "Workspace"
     bindsym x move workspace to output HDMI-1; mode default
