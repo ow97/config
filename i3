@@ -78,16 +78,19 @@ bindsym Mod4+Tab workspace back_and_forth
 bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
-bindsym Mod4+1 mode default
-bindsym Mod4+2 mode default
-bindsym Mod4+3 mode default
-bindsym Mod4+4 mode default
-bindsym Mod4+5 mode default
-bindsym Mod4+6 mode default
-bindsym Mod4+7 mode default
-bindsym Mod4+8 mode default
-bindsym Mod4+9 mode default
-bindsym Mod4+0 mode default
+bindsym Mod4+1 nop
+bindsym Mod4+2 nop
+bindsym Mod4+3 nop
+bindsym Mod4+4 nop
+bindsym Mod4+5 nop
+bindsym Mod4+6 nop
+bindsym Mod4+7 nop
+bindsym Mod4+8 nop
+bindsym Mod4+9 nop
+bindsym Mod4+0 nop
+bindsym Mod4+minus nop
+bindsym Mod4+equal nop
+
 bindsym Mod4+a mode default
 bindsym Mod4+b move workspace to output eDP-1
 bindsym Mod4+c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
@@ -147,16 +150,19 @@ mode "Command" {
     bindsym grave workspace prev; mode default;
     bindsym BackSpace workspace next; mode default;
 
-    bindsym 1 mode default
-    bindsym 2 mode default
-    bindsym 3 mode default
-    bindsym 4 mode default
-    bindsym 5 mode default
-    bindsym 6 mode default
-    bindsym 7 mode default
-    bindsym 8 mode default
-    bindsym 9 mode default
-    bindsym 0 mode default
+    bindsym 1 nop
+    bindsym 2 nop
+    bindsym 3 nop
+    bindsym 4 nop
+    bindsym 5 nop
+    bindsym 6 nop
+    bindsym 7 nop
+    bindsym 8 nop
+    bindsym 9 nop
+    bindsym 0 nop
+    bindsym minus nop
+    bindsym equal nop
+
     bindsym a mode default
     bindsym b move workspace to output eDP-1; mode default
     bindsym c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
