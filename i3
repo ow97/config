@@ -60,19 +60,19 @@ bindsym Pointer_Button3 exec "xdotool click 3"
 
 bindsym Print exec "bash ~/git/config/scripts/screenshot.sh"
 
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
-bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
-
-bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
-bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
-
 bindsym Mod4+F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
 
 bindsym Mod4+F5 reload
 bindsym Mod4+F6 restart
 
 bindsym Mod4+F11 fullscreen toggle
+
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
+
+bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
+bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 
 bindsym Mod4+Tab workspace back_and_forth
 bindsym Mod4+grave workspace prev
@@ -107,7 +107,7 @@ bindsym Mod4+p mode "Position Window"
 bindsym Mod4+q mode "Quit?"
 bindsym Mod4+r mode "Resize"
 bindsym Mod4+s sticky toggle
-bindsym Mod4+t mode "Navigate Tree"
+bindsym Mod4+t mode default
 bindsym Mod4+u mode default
 bindsym Mod4+v split v
 bindsym Mod4+w mode "Workspace"
@@ -176,7 +176,7 @@ mode "Command" {
     bindsym q mode "Quit?"
     bindsym r mode "Resize"
     bindsym s sticky toggle; mode default
-    bindsym t mode "Navigate Tree"
+    bindsym t mode default
     bindsym u mode default
     bindsym v split v; mode default
     bindsym w mode "Workspace"
