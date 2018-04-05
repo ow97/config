@@ -111,7 +111,7 @@ bindsym Mod4+q mode "Quit?"
 bindsym Mod4+r mode "Resize"
 bindsym Mod4+s sticky toggle
 bindsym Mod4+t mode default
-bindsym Mod4+u mode default
+bindsym Mod4+u [urgent="latest"] focus
 bindsym Mod4+v split v
 bindsym Mod4+w mode "Workspace"
 bindsym Mod4+x move workspace to output HDMI-1
@@ -183,7 +183,7 @@ mode "Command" {
     bindsym r mode "Resize"
     bindsym s sticky toggle; mode default
     bindsym t mode default
-    bindsym u mode default
+    bindsym u [urgent="latest"] focus
     bindsym v split v; mode default
     bindsym w mode "Workspace"
     bindsym x move workspace to output HDMI-1; mode default
