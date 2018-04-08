@@ -100,7 +100,7 @@ bindsym Mod4+f mode "Change Focus"
 bindsym Mod4+g mode default
 bindsym Mod4+h split h
 bindsym Mod4+i exec i3-input
-bindsym Mod4+j mode default
+bindsym Mod4+j exec "rofi -show window"; mode default
 bindsym Mod4+k mode default
 bindsym Mod4+l mode "Lock?"
 bindsym Mod4+m mode "Move Window"
@@ -172,7 +172,7 @@ mode "Command" {
     bindsym g mode default
     bindsym h split h; mode default
     bindsym i exec i3-input; mode default
-    bindsym j mode default
+    bindsym j exec "rofi -show window"; mode default
     bindsym k mode default
     bindsym l mode "Lock?"
     bindsym m mode "Move Window"
@@ -561,15 +561,15 @@ mode "Change Focus" {
     bindsym Right focus right
     bindsym Mod4+Right focus right
 
-    bindsym p focus parent; mode default
-    bindsym Mod4+p focus parent; mode default
-    bindsym p focus child; mode default
-    bindsym Mod4+p focus child; mode default
+    bindsym p focus parent
+    bindsym Mod4+p focus parent
+    bindsym p focus child
+    bindsym Mod4+p focus child
 
-    bindsym f focus floating; mode default
-    bindsym Mod4+f focus floating; mode default
-    bindsym t focus tiling; mode default
-    bindsym Mod4+t focus tiling; mode default
+    bindsym f focus floating
+    bindsym Mod4+f focus floating
+    bindsym t focus tiling
+    bindsym Mod4+t focus tiling
 }
 
 mode "Position Window" {
@@ -587,10 +587,10 @@ mode "Position Window" {
     bindsym Right move right
     bindsym Mod4+Right move right
 
-    bindsym space floating toggle; mode default
-    bindsym Mod4+space floating toggle; mode default
-    bindsym f floating toggle; mode default
-    bindsym Mod4+f floating toggle; mode default
+    bindsym space floating toggle
+    bindsym Mod4+space floating toggle
+    bindsym f floating toggle
+    bindsym Mod4+f floating toggle
 
     bindsym c move position center; mode default
     bindsym Mod4+c move position center; mode default
