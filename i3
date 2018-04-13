@@ -100,7 +100,7 @@ bindsym Mod4+f mode "Change Focus"
 bindsym Mod4+g mode default
 bindsym Mod4+h split h
 bindsym Mod4+i exec i3-input
-bindsym Mod4+j exec "rofi -show window"; mode default
+bindsym Mod4+j exec "rofi -show window"
 bindsym Mod4+k mode default
 bindsym Mod4+l mode "Lock?"
 bindsym Mod4+m mode "Move Window"
