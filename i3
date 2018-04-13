@@ -91,17 +91,17 @@ bindsym Mod4+0 nop
 bindsym Mod4+minus nop
 bindsym Mod4+equal nop
 
-bindsym Mod4+a mode default
+bindsym Mod4+a nop
 bindsym Mod4+b move workspace to output eDP-1
 bindsym Mod4+c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
 bindsym Mod4+d exec "rofi -show drun"
 bindsym Mod4+e mode "Execute"
 bindsym Mod4+f mode "Change Focus"
-bindsym Mod4+g mode default
+bindsym Mod4+g nop
 bindsym Mod4+h split h
 bindsym Mod4+i exec i3-input
 bindsym Mod4+j exec "rofi -show window"
-bindsym Mod4+k mode default
+bindsym Mod4+k nop
 bindsym Mod4+l mode "Lock?"
 bindsym Mod4+m mode "Move Window"
 bindsym Mod4+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
@@ -110,12 +110,12 @@ bindsym Mod4+p mode "Position Window"
 bindsym Mod4+q mode "Quit?"
 bindsym Mod4+r mode "Resize"
 bindsym Mod4+s sticky toggle
-bindsym Mod4+t mode default
+bindsym Mod4+t nop
 bindsym Mod4+u [urgent="latest"] focus
 bindsym Mod4+v split v
 bindsym Mod4+w mode "Workspace"
 bindsym Mod4+x move workspace to output HDMI-1
-bindsym Mod4+y mode default
+bindsym Mod4+y nop
 bindsym Mod4+z mode "Enter night mode?"
 
 bindsym Mod4+Return exec termite
@@ -163,17 +163,17 @@ mode "Command" {
     bindsym minus nop
     bindsym equal nop
 
-    bindsym a mode default
+    bindsym a nop
     bindsym b move workspace to output eDP-1; mode default
     bindsym c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
     bindsym d exec "rofi -show drun"; mode default
     bindsym e mode "Execute"
     bindsym f mode "Change Focus"
-    bindsym g mode default
+    bindsym g nop
     bindsym h split h; mode default
     bindsym i exec i3-input; mode default
     bindsym j exec "rofi -show window"; mode default
-    bindsym k mode default
+    bindsym k nop
     bindsym l mode "Lock?"
     bindsym m mode "Move Window"
     bindsym n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '; mode default
@@ -182,12 +182,12 @@ mode "Command" {
     bindsym q mode "Quit?"
     bindsym r mode "Resize"
     bindsym s sticky toggle; mode default
-    bindsym t mode default
+    bindsym t nop
     bindsym u [urgent="latest"] focus; mode default
     bindsym v split v; mode default
     bindsym w mode "Workspace"
     bindsym x move workspace to output HDMI-1; mode default
-    bindsym y mode default
+    bindsym y nop
     bindsym z mode "Enter night mode?"
 
     bindsym Return exec termite; mode default
