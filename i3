@@ -165,7 +165,7 @@ mode "Command" {
 
     bindsym a nop
     bindsym b move workspace to output eDP-1; mode default
-    bindsym c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"
+    bindsym c exec "xdotool click 1 click 1; i3-msg 'fullscreen disable; floating toggle; sticky toggle; resize set 640 px 360 px;'"; mode default
     bindsym d exec "rofi -show drun"; mode default
     bindsym e mode "Execute"
     bindsym f mode "Change Focus"
