@@ -587,10 +587,13 @@ mode "Position Window" {
     bindsym Right move right
     bindsym Mod4+Right move right
 
-    bindsym space floating toggle
-    bindsym Mod4+space floating toggle
-    bindsym f floating toggle
-    bindsym Mod4+f floating toggle
+    bindsym space floating toggle; mode default
+    bindsym Mod4+space floating toggle; mode default
+
+    bindsym f floating enable
+    bindsym Mod4+f floating enable
+    bindsym t floating disable
+    bindsym Mod4+t floating disable
 
     bindsym c move position center; mode default
     bindsym Mod4+c move position center; mode default
