@@ -264,8 +264,8 @@ mode "Execute" {
     bindsym Mod4+v exec pavucontrol; mode default
     bindsym w exec "wicd-gtk -n"; mode default
     bindsym Mod4+w exec "wicd-gtk -n"; mode default
-    bindsym x mode default
-    bindsym Mod4+x mode default
+    bindsym x exec xarchiver; mode default
+    bindsym Mod4+x exec xarchiver; mode default
     bindsym y mode default
     bindsym Mod4+y mode default
     bindsym z mode default
