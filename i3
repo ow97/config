@@ -555,8 +555,8 @@ mode "Workspace Toggling" {
     bindsym r exec "python3 ~/git/config/scripts/workspace_record.py"
     bindsym Mod4+r exec "python3 ~/git/config/scripts/workspace_record.py"
 
-    bindsym a exec "python3 ~/git/config/scripts/workspace_animate.py"
-    bindsym Mod4+a exec "python3 ~/git/config/scripts/workspace_animate.py"
+    bindsym a exec i3-input -F 'exec "python3 ~/git/config/scripts/workspace_animate.py %s"' -P 'Animation interval: '
+    bindsym Mod4+a exec i3-input -F 'exec "python3 ~/git/config/scripts/workspace_animate.py %s"' -P 'Animation interval: '
 
     bindsym space exec "bash ~/git/config/scripts/workspace_cycle.sh"
     bindsym Mod4+space exec "bash ~/git/config/scripts/workspace_cycle.sh"

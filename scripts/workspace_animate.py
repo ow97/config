@@ -5,6 +5,12 @@ import time
 import threading
 import sys
 
+interval = 1
+try:
+    interval = max(float(sys.argv[1]), 0.1)
+except (IndexError, ValueError):
+    pass
+
 with open('/tmp/workspace_list') as list_file:
     def animate():
         workspaces = []
@@ -14,13 +20,13 @@ with open('/tmp/workspace_list') as list_file:
         while True:
             for workspace in workspaces:
                 i3.command('workspace ' + workspace)
-                time.sleep(1)
+                time.sleep(interval)
 
 
     i3 = i3ipc.Connection()
 
     i3.command('mode "Workspace Animate"')
-    i3.on('mode::default', lambda event: i3.main_quit())
+    i3.on('mode::default', lambda self, event: i3.main_quit())
 
     thread = threading.Thread(target=animate)
     thread.daemon = True
