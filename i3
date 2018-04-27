@@ -558,6 +558,8 @@ mode "Workspace Toggling" {
     bindsym a exec i3-input -F 'exec "python3 ~/git/config/scripts/workspace_animate.py %s"' -P 'Animation interval: '
     bindsym Mod4+a exec i3-input -F 'exec "python3 ~/git/config/scripts/workspace_animate.py %s"' -P 'Animation interval: '
 
+    bindsym t exec "bash ~/git/config/scripts/workspace_cycle.sh"; mode default
+    bindsym Mod4+t exec "bash ~/git/config/scripts/workspace_cycle.sh"; mode default
     bindsym space exec "bash ~/git/config/scripts/workspace_cycle.sh"
     bindsym Mod4+space exec "bash ~/git/config/scripts/workspace_cycle.sh"
 }

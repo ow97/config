@@ -14,6 +14,6 @@ with open('/tmp/workspace_list', 'w') as list_file:
     i3.command('mode "Workspace Record"')
 
     i3.on('workspace::focus', on_workspace_focus)
-    i3.on('mode::default', lambda event: i3.main_quit())
+    i3.on('mode::default', lambda self, event: i3.main_quit())
 
     i3.main()
