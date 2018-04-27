@@ -74,7 +74,7 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
 bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 
-bindsym Mod4+Tab exec "bash ~/git/config/scripts/workspace_toggle.sh"
+bindsym Mod4+Tab workspace back_and_forth
 bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
@@ -146,7 +146,7 @@ mode "Command" {
 
     bindsym F11 fullscreen toggle; mode default
 
-    bindsym Tab exec "bash ~/git/config/scripts/workspace_toggle.sh"; mode default
+    bindsym Tab workspace back_and_forth; mode default
     bindsym grave workspace prev; mode default
     bindsym BackSpace workspace next; mode default
 
@@ -558,8 +558,8 @@ mode "Workspace Toggling" {
     bindsym a exec "python3 ~/git/config/scripts/workspace_animate.py"
     bindsym Mod4+a exec "python3 ~/git/config/scripts/workspace_animate.py"
 
-    bindsym c exec "bash ~/git/config/scripts/workspace_clear.sh"; mode default
-    bindsym Mod4+c exec "bash ~/git/config/scripts/workspace_clear.sh"; mode default
+    bindsym space exec "bash ~/git/config/scripts/workspace_cycle.sh"
+    bindsym Mod4+space exec "bash ~/git/config/scripts/workspace_cycle.sh"
 }
 
 mode "Workspace Animate" {

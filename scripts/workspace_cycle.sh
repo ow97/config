@@ -13,6 +13,4 @@ then
 	END {
 		print store > "/tmp/workspace_list"
 	}' /tmp/workspace_list | xargs i3-msg workspace
-else
-	i3-msg workspace back_and_forth
 fi
