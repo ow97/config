@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ "$1" == "--blank" ]
 then
 	light > /tmp/brightness_value
