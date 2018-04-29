@@ -99,7 +99,7 @@ bindsym Mod4+e mode "Execute"
 bindsym Mod4+f mode "Change Focus"
 bindsym Mod4+g nop
 bindsym Mod4+h split h
-bindsym Mod4+i exec i3-input
+bindsym Mod4+i exec "i3-input"
 bindsym Mod4+j exec "rofi -show window"
 bindsym Mod4+k nop
 bindsym Mod4+l mode "Lock?"
@@ -118,8 +118,8 @@ bindsym Mod4+x move workspace to output HDMI-1
 bindsym Mod4+y nop
 bindsym Mod4+z mode "Enter night mode?"
 
-bindsym Mod4+Return exec termite
-bindsym Mod4+KP_Enter exec termite
+bindsym Mod4+Return exec "termite"
+bindsym Mod4+KP_Enter exec "termite"
 
 bindsym Mod4+Left focus left
 bindsym Mod4+Down focus down
@@ -171,7 +171,7 @@ mode "Command" {
     bindsym f mode "Change Focus"
     bindsym g nop
     bindsym h split h; mode default
-    bindsym i exec i3-input; mode default
+    bindsym i exec "i3-input"; mode default
     bindsym j exec "rofi -show window"; mode default
     bindsym k nop
     bindsym l mode "Lock?"
@@ -190,8 +190,8 @@ mode "Command" {
     bindsym y nop
     bindsym z mode "Enter night mode?"
 
-    bindsym Return exec termite; mode default
-    bindsym KP_Enter exec termite; mode default
+    bindsym Return exec "termite"; mode default
+    bindsym KP_Enter exec "termite"; mode default
 
     bindsym Left focus left; mode default
     bindsym Down focus down; mode default
@@ -213,35 +213,35 @@ mode "Execute" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym Return exec termite; mode default
-    bindsym Mod4+Return exec termite; mode default
-    bindsym KP_Enter exec termite; mode default
-    bindsym Mod4+KP_Enter exec termite; mode default
+    bindsym Return exec "termite"; mode default
+    bindsym Mod4+Return exec "termite"; mode default
+    bindsym KP_Enter exec "termite"; mode default
+    bindsym Mod4+KP_Enter exec "termite"; mode default
 
-    bindsym a exec atom; mode default
-    bindsym Mod4+a exec atom; mode default
-    bindsym b exec chromium; mode default
-    bindsym Mod4+b exec chromium; mode default
+    bindsym a exec "atom"; mode default
+    bindsym Mod4+a exec "atom"; mode default
+    bindsym b exec "chromium"; mode default
+    bindsym Mod4+b exec "chromium"; mode default
     bindsym c mode default
     bindsym Mod4+c mode default
     bindsym d mode default
     bindsym Mod4+d mode default
-    bindsym e exec google-earth; mode default
-    bindsym Mod4+e exec google-earth; mode default
-    bindsym f exec firefox; mode default
-    bindsym Mod4+f exec firefox; mode default
-    bindsym g exec gimp; mode default
-    bindsym Mod4+g exec gimp; mode default
+    bindsym e exec "google-earth"; mode default
+    bindsym Mod4+e exec "google-earth"; mode default
+    bindsym f exec "firefox"; mode default
+    bindsym Mod4+f exec "firefox"; mode default
+    bindsym g exec "gimp"; mode default
+    bindsym Mod4+g exec "gimp"; mode default
     bindsym h exec "termite --exec='sudo htop'"; mode default
     bindsym Mod4+h exec "termite --exec='sudo htop'"; mode default
     bindsym i mode default
     bindsym Mod4+i mode default
-    bindsym j exec jetbrains-toolbox; mode default
-    bindsym Mod4+j exec jetbrains-toolbox; mode default
+    bindsym j exec "jetbrains-toolbox"; mode default
+    bindsym Mod4+j exec "jetbrains-toolbox"; mode default
     bindsym k mode default
     bindsym Mod4+k mode default
-    bindsym l exec libreoffice; mode default
-    bindsym Mod4+l exec libreoffice; mode default
+    bindsym l exec "libreoffice"; mode default
+    bindsym Mod4+l exec "libreoffice"; mode default
     bindsym m mode default
     bindsym Mod4+m mode default
     bindsym n mode default
@@ -256,16 +256,16 @@ mode "Execute" {
     bindsym Mod4+r mode default
     bindsym s mode default
     bindsym Mod4+s mode default
-    bindsym t exec tor-browser; mode default
-    bindsym Mod4+t exec tor-browser; mode default
+    bindsym t exec "tor-browser"; mode default
+    bindsym Mod4+t exec "tor-browser"; mode default
     bindsym u mode default
     bindsym Mod4+u mode default
-    bindsym v exec pavucontrol; mode default
-    bindsym Mod4+v exec pavucontrol; mode default
+    bindsym v exec "pavucontrol"; mode default
+    bindsym Mod4+v exec "pavucontrol"; mode default
     bindsym w exec "wicd-gtk -n"; mode default
     bindsym Mod4+w exec "wicd-gtk -n"; mode default
-    bindsym x exec xarchiver; mode default
-    bindsym Mod4+x exec xarchiver; mode default
+    bindsym x exec "xarchiver"; mode default
+    bindsym Mod4+x exec "xarchiver"; mode default
     bindsym y mode default
     bindsym Mod4+y mode default
     bindsym z mode default
@@ -849,8 +849,8 @@ mode "Night" {
     bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
 
-    bindsym --whole-window button4 exec pactl set-sink-volume 0 +1%
-    bindsym --whole-window button5 exec pactl set-sink-volume 0 -1%
+    bindsym --whole-window button4 exec "pactl set-sink-volume 0 +1%"
+    bindsym --whole-window button5 exec "pactl set-sink-volume 0 -1%"
 }
 
 mode "Night (Black)" {
@@ -861,6 +861,6 @@ mode "Night (Black)" {
     bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +1%"
     bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
 
-    bindsym --whole-window button4 exec pactl set-sink-volume 0 +1%
-    bindsym --whole-window button5 exec pactl set-sink-volume 0 -1%
+    bindsym --whole-window button4 exec "pactl set-sink-volume 0 +1%"
+    bindsym --whole-window button5 exec "pactl set-sink-volume 0 -1%"
 }
