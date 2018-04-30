@@ -574,8 +574,8 @@ mode "Workspace Animate" {
 mode "Workspace Record" {
     bindsym Escape mode default
     bindsym Mod4+Escape mode default
-    bindsym ISO_Level3_Shift mode default
-    bindsym Mod4+ISO_Level3_Shift mode default
+    bindsym ISO_Level3_Shift nop
+    bindsym Mod4+ISO_Level3_Shift nop
 
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '
