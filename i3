@@ -8,6 +8,8 @@ exec_always "setxkbmap -layout gb"
 # Remap caps lock to middle click
 exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 
+exec_always redshift
+
 ############################# Configuration #############################
 
 focus_follows_mouse no
