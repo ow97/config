@@ -743,10 +743,14 @@ mode "Resize" {
     bindsym S mode "Resize (Slow)"
     bindsym Mod4+S mode "Resize (Slow)"
 
-    bindsym Left  resize shrink width  10 px or 2 ppt
-    bindsym Up    resize grow   height 10 px or 2 ppt
-    bindsym Down  resize shrink height 10 px or 2 ppt
-    bindsym Right resize grow   width  10 px or 2 ppt
+    bindsym Left       resize shrink width  10 px or 2 ppt
+    bindsym Mod4+Left  resize shrink width  10 px or 2 ppt
+    bindsym Up         resize grow   height 10 px or 2 ppt
+    bindsym Mod4+Up    resize grow   height 10 px or 2 ppt
+    bindsym Down       resize shrink height 10 px or 2 ppt
+    bindsym Mod4+Down  resize shrink height 10 px or 2 ppt
+    bindsym Right      resize grow   width  10 px or 2 ppt
+    bindsym Mod4+Right resize grow   width  10 px or 2 ppt
 }
 
 mode "Resize (Slow)" {
@@ -764,10 +768,14 @@ mode "Resize (Slow)" {
     bindsym S mode "Resize"
     bindsym Mod4+S mode "Resize"
 
-    bindsym Left  resize shrink width  1 px or 1 ppt
-    bindsym Up    resize grow   height 1 px or 1 ppt
-    bindsym Down  resize shrink height 1 px or 1 ppt
-    bindsym Right resize grow   width  1 px or 1 ppt
+    bindsym Left       resize shrink width  1 px or 1 ppt
+    bindsym Mod4+Left  resize shrink width  1 px or 1 ppt
+    bindsym Up         resize grow   height 1 px or 1 ppt
+    bindsym Mod4+Up    resize grow   height 1 px or 1 ppt
+    bindsym Down       resize shrink height 1 px or 1 ppt
+    bindsym Mod4+Down  resize shrink height 1 px or 1 ppt
+    bindsym Right      resize grow   width  1 px or 1 ppt
+    bindsym Mod4+Right resize grow   width  1 px or 1 ppt
 }
 
 mode "Resize (Fast)" {
@@ -785,10 +793,14 @@ mode "Resize (Fast)" {
     bindsym S mode "Resize (Slow)"
     bindsym Mod4+S mode "Resize (Slow)"
 
-    bindsym Left  resize shrink width  50 px or 5 ppt
-    bindsym Up    resize grow   height 50 px or 5 ppt
-    bindsym Down  resize shrink height 50 px or 5 ppt
-    bindsym Right resize grow   width  50 px or 5 ppt
+    bindsym Left       resize shrink width  50 px or 5 ppt
+    bindsym Mod4+Left  resize shrink width  50 px or 5 ppt
+    bindsym Up         resize grow   height 50 px or 5 ppt
+    bindsym Mod4+Up    resize grow   height 50 px or 5 ppt
+    bindsym Down       resize shrink height 50 px or 5 ppt
+    bindsym Mod4+Down  resize shrink height 50 px or 5 ppt
+    bindsym Right      resize grow   width  50 px or 5 ppt
+    bindsym Mod4+Right resize grow   width  50 px or 5 ppt
 }
 
 mode "Quit?" {
