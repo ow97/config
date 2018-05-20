@@ -1,11 +1,13 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
+    1) light -k | awk '{print ($1>50) ? 50 : 50-int($1)}' | xargs light -kS ;;
+
     4) light | awk '{print int($1*1.1)+1}' | xargs light -S ;;
     5) light | awk '{print int($1/1.1)}' | xargs light -S ;;
 
-    1) ;& 8) light -kU 50 ;;
-    3) ;& 9) light -kA 50 ;;
+    8) light -kU 50 ;;
+    9) light -kA 50 ;;
 esac
 
 light | awk '{ print int($1)"%" }'
