@@ -36,9 +36,7 @@ bar {
     tray_output none
     strip_workspace_numbers yes
 
-    bindsym button2 workspace back_and_forth
-    bindsym button8 workspace back_and_forth
-    bindsym button9 workspace back_and_forth
+    bindsym button3 workspace back_and_forth
 
     colors {
         background #000000
