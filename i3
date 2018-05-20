@@ -77,6 +77,8 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
 bindsym Mod4+XF86AudioRaiseVolume exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
 bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xargs light -S"
+bindsym XF86MonBrightnessUp exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
+bindsym XF86MonBrightnessDown exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 
 bindsym Mod4+Tab workspace back_and_forth
 bindsym Mod4+grave workspace prev
