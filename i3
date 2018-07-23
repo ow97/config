@@ -749,8 +749,8 @@ mode "Position Window (Slow)" {
     bindsym Mod4+N mode "Position Window"
     bindsym R mode "Position Window"
     bindsym Mod4+R mode "Position Window"
-    bindsym S mode "Position Window (Slow)"
-    bindsym Mod4+S mode "Position Window (Slow)"
+    bindsym S mode "Position Window"
+    bindsym Mod4+S mode "Position Window"
 
     bindsym Left move left 1px
     bindsym Mod4+Left move left 1px
@@ -781,8 +781,8 @@ mode "Position Window (Fast)" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym F mode "Position Window (Fast)"
-    bindsym Mod4+F mode "Position Window (Fast)"
+    bindsym F mode "Position Window"
+    bindsym Mod4+F mode "Position Window"
     bindsym N mode "Position Window"
     bindsym Mod4+N mode "Position Window"
     bindsym R mode "Position Window"
