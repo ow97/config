@@ -705,14 +705,99 @@ mode "Position Window" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym Left move left
-    bindsym Mod4+Left move left
-    bindsym Down move down
-    bindsym Mod4+Down move down
-    bindsym Up move up
-    bindsym Mod4+Up move up
-    bindsym Right move right
-    bindsym Mod4+Right move right
+    bindsym F mode "Position Window (Fast)"
+    bindsym Mod4+F mode "Position Window (Fast)"
+    bindsym N mode "Position Window"
+    bindsym Mod4+N mode "Position Window"
+    bindsym R mode "Position Window"
+    bindsym Mod4+R mode "Position Window"
+    bindsym S mode "Position Window (Slow)"
+    bindsym Mod4+S mode "Position Window (Slow)"
+
+    bindsym Left move left 10px
+    bindsym Mod4+Left move left 10px
+    bindsym Down move down 10px
+    bindsym Mod4+Down move down 10px
+    bindsym Up move up 10px
+    bindsym Mod4+Up move up 10px
+    bindsym Right move right 10px
+    bindsym Mod4+Right move right 10px
+
+    bindsym space floating toggle; mode default
+    bindsym Mod4+space floating toggle; mode default
+
+    bindsym f floating enable
+    bindsym Mod4+f floating enable
+    bindsym t floating disable
+    bindsym Mod4+t floating disable
+
+    bindsym c move position center; mode default
+    bindsym Mod4+c move position center; mode default
+    bindsym m move position mouse; mode default
+    bindsym Mod4+m move position mouse; mode default
+}
+
+mode "Position Window (Slow)" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
+
+    bindsym F mode "Position Window (Fast)"
+    bindsym Mod4+F mode "Position Window (Fast)"
+    bindsym N mode "Position Window"
+    bindsym Mod4+N mode "Position Window"
+    bindsym R mode "Position Window"
+    bindsym Mod4+R mode "Position Window"
+    bindsym S mode "Position Window (Slow)"
+    bindsym Mod4+S mode "Position Window (Slow)"
+
+    bindsym Left move left 1px
+    bindsym Mod4+Left move left 1px
+    bindsym Down move down 1px
+    bindsym Mod4+Down move down 1px
+    bindsym Up move up 1px
+    bindsym Mod4+Up move up 1px
+    bindsym Right move right 1px
+    bindsym Mod4+Right move right 1px
+
+    bindsym space floating toggle; mode default
+    bindsym Mod4+space floating toggle; mode default
+
+    bindsym f floating enable
+    bindsym Mod4+f floating enable
+    bindsym t floating disable
+    bindsym Mod4+t floating disable
+
+    bindsym c move position center; mode default
+    bindsym Mod4+c move position center; mode default
+    bindsym m move position mouse; mode default
+    bindsym Mod4+m move position mouse; mode default
+}
+
+mode "Position Window (Fast)" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
+
+    bindsym F mode "Position Window (Fast)"
+    bindsym Mod4+F mode "Position Window (Fast)"
+    bindsym N mode "Position Window"
+    bindsym Mod4+N mode "Position Window"
+    bindsym R mode "Position Window"
+    bindsym Mod4+R mode "Position Window"
+    bindsym S mode "Position Window (Slow)"
+    bindsym Mod4+S mode "Position Window (Slow)"
+
+    bindsym Left move left 50px
+    bindsym Mod4+Left move left 50px
+    bindsym Down move down 50px
+    bindsym Mod4+Down move down 50px
+    bindsym Up move up 50px
+    bindsym Mod4+Up move up 50px
+    bindsym Right move right 50px
+    bindsym Mod4+Right move right 50px
 
     bindsym space floating toggle; mode default
     bindsym Mod4+space floating toggle; mode default
