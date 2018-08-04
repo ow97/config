@@ -1,0 +1,18 @@
+[redshift]
+temp-day=5700
+temp-night=3500
+
+fade=1
+
+; Solar evaluation
+elevation-high=3
+elevation-low=-6
+
+location-provider=manual
+
+adjustment-method=randr
+
+[manual]
+lat=54.7
+lon=-1.6
+
