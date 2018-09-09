@@ -2,12 +2,11 @@
 
 exec_always "feh --bg-fill ~/git/config/img/background.png"
 
-exec_always "compton -b"
 exec_always "setxkbmap -layout gb"
-
 # Remap caps lock to middle click
 exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 
+exec_always "pkill xcompmgr; xcompmgr"
 exec_always "pkill redshift; sleep 5; redshift"
 
 ############################# Configuration #############################
