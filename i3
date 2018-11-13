@@ -896,8 +896,8 @@ mode "Quit?" {
     bindsym q kill; mode default
     bindsym Mod4+q kill; mode default
 
-    bindsym k exec "termite --exec=xkill"; mode default
-    bindsym Mod4+k exec "termite -exec=xkill"; mode default
+    bindsym k exec "termite -e xkill"; mode default
+    bindsym Mod4+k exec "termite -e xkill"; mode default
 
     bindsym m kill
     bindsym Mod4+m kill
