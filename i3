@@ -37,7 +37,7 @@ bar {
     tray_output none
     strip_workspace_numbers yes
 
-    bindsym button3 mode "Toggle"
+    bindsym button3 mode "Toggle"; mode default
 
     colors {
         background #000000
@@ -553,7 +553,12 @@ mode "Move and Follow" {
     bindsym Mod4+z move container to workspace 35:Z; workspace 35:Z; mode default
 }
 
-mode "Toggle" { }
+mode "Toggle" {
+    bindsym Escape mode default
+    bindsym Mod4+Escape mode default
+    bindsym ISO_Level3_Shift mode default
+    bindsym Mod4+ISO_Level3_Shift mode default
+}
 
 mode "Change Focus" {
     bindsym Escape mode default

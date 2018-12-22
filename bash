@@ -8,9 +8,9 @@
 alias ls='ls --color=auto'
 alias dig='echo "You mean drill!"; echo; drill '
 
-BOLD="\[$(tput bold)\]"
-RESET="\[$(tput sgr0)\]"
-PS1="${BOLD}[$?] \h \W > ${RESET}"
+export BOLD="\[$(tput bold)\]"
+export RESET="\[$(tput sgr0)\]"
+export PS1="${BOLD}[$?] \h \W > ${RESET}"
 
 export EDITOR=nano
 export TERM=xterm
