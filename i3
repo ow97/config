@@ -229,8 +229,8 @@ mode "Execute" {
     bindsym Mod4+a exec "atom"; mode default
     bindsym b exec "chromium"; mode default
     bindsym Mod4+b exec "chromium"; mode default
-    bindsym c mode default
-    bindsym Mod4+c mode default
+    bindsym c exec "code -n"; mode default
+    bindsym Mod4+c exec "code -n"; mode default
     bindsym d mode default
     bindsym Mod4+d mode default
     bindsym e exec "google-earth"; mode default
