@@ -916,21 +916,14 @@ mode "Lock?" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym l exec "i3lock -feti ~/git/config/img/lock.png -c 404040"; mode default
-    bindsym Mod4+l exec "i3lock -feti ~/git/config/img/lock.png -c 404040"; mode default
+    bindsym l exec "bash ~/git/config/scripts/lock.sh"; mode default
+    bindsym Mod4+l exec "bash ~/git/config/scripts/lock.sh"; mode default
 
-    bindsym b exec "bash ~/git/config/scripts/blank.sh --blank"
-    bindsym Mod4+b exec "bash ~/git/config/scripts/blank.sh --blank"
+    bindsym b exec "xset dpms force off"; mode default
+    bindsym Mod4+b exec "xset dpms force off"; mode default
 
     bindsym s exec "systemctl suspend"; mode default;
     bindsym Mod4+s exec "systemctl suspend"; mode default;
-}
-
-mode "Blank" {
-    bindsym Escape exec "bash ~/git/config/scripts/blank.sh --show"
-
-    bindsym b exec "bash ~/git/config/scripts/blank.sh --show"
-    bindsym Mod4+b exec "bash ~/git/config/scripts/blank.sh --show"
 }
 
 mode "Enter night mode?" {
