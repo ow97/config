@@ -9,7 +9,7 @@ exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 exec_always "pkill xcompmgr; xcompmgr"
 exec_always "pkill redshift; sleep 5; redshift"
 
-exec_always "~/git/config/scripts/back_and_forth.py"
+exec_always "~/git/config/i3custom/start.py"
 
 ############################# Configuration #############################
 
@@ -37,7 +37,7 @@ bar {
     tray_output none
     strip_workspace_numbers yes
 
-    bindsym button3 mode "Toggle"; mode default
+    bindsym button3 workspace back_and_forth
 
     colors {
         background #000000
@@ -81,19 +81,20 @@ bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xarg
 bindsym XF86MonBrightnessUp exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
 bindsym XF86MonBrightnessDown exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 
-bindsym Mod4+Tab nop
 bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
-bindsym Mod4+1 nop
-bindsym Mod4+2 nop
-bindsym Mod4+3 nop
-bindsym Mod4+4 nop
-bindsym Mod4+5 nop
-bindsym Mod4+6 nop
-bindsym Mod4+7 nop
-bindsym Mod4+8 nop
-bindsym Mod4+9 nop
+bindsym Mod4+Tab nop; #workspace_toggle 1
+bindsym Mod4+1 nop; #workspace_toggle 1
+bindsym Mod4+2 nop; #workspace_toggle 2
+bindsym Mod4+3 nop; #workspace_toggle 3
+bindsym Mod4+4 nop; #workspace_toggle 4
+bindsym Mod4+5 nop; #workspace_toggle 5
+bindsym Mod4+6 nop; #workspace_toggle 6
+bindsym Mod4+7 nop; #workspace_toggle 7
+bindsym Mod4+8 nop; #workspace_toggle 8
+bindsym Mod4+9 nop; #workspace_toggle 9
+
 bindsym Mod4+0 nop
 bindsym Mod4+minus nop
 bindsym Mod4+equal nop
@@ -153,19 +154,20 @@ mode "Command" {
 
     bindsym F11 fullscreen toggle; mode default
 
-    bindsym Tab nop; mode default
     bindsym grave workspace prev; mode default
     bindsym BackSpace workspace next; mode default
 
-    bindsym 1 nop
-    bindsym 2 nop
-    bindsym 3 nop
-    bindsym 4 nop
-    bindsym 5 nop
-    bindsym 6 nop
-    bindsym 7 nop
-    bindsym 8 nop
-    bindsym 9 nop
+    bindsym Tab nop; #workspace_toggle 1
+    bindsym 1 nop; #workspace_toggle 1
+    bindsym 2 nop; #workspace_toggle 2
+    bindsym 3 nop; #workspace_toggle 3
+    bindsym 4 nop; #workspace_toggle 4
+    bindsym 5 nop; #workspace_toggle 5
+    bindsym 6 nop; #workspace_toggle 6
+    bindsym 7 nop; #workspace_toggle 7
+    bindsym 8 nop; #workspace_toggle 8
+    bindsym 9 nop; #workspace_toggle 9
+
     bindsym 0 nop
     bindsym minus nop
     bindsym equal nop
@@ -288,8 +290,8 @@ mode "Workspace" {
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
 
-    bindsym Tab nop
-    bindsym Mod4+Tab nop
+    bindsym Tab nop; #workspace_toggle 1
+    bindsym Mod4+Tab nop; #workspace_toggle 1
     bindsym grave workspace prev
     bindsym Mod4+grave workspace prev
     bindsym BackSpace workspace next
