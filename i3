@@ -9,6 +9,8 @@ exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 exec_always "pkill xcompmgr; xcompmgr"
 exec_always "pkill redshift; sleep 5; redshift"
 
+exec_always "~/git/config/scripts/back_and_forth.py"
+
 ############################# Configuration #############################
 
 focus_follows_mouse no
@@ -35,7 +37,7 @@ bar {
     tray_output none
     strip_workspace_numbers yes
 
-    bindsym button3 workspace back_and_forth
+    bindsym button3 mode "Toggle"
 
     colors {
         background #000000
@@ -79,7 +81,7 @@ bindsym Mod4+XF86AudioLowerVolume exec "light | awk '{print int($1/1.1)}' | xarg
 bindsym XF86MonBrightnessUp exec "light | awk '{print int($1*1.1)+1}' | xargs light -S"
 bindsym XF86MonBrightnessDown exec "light | awk '{print int($1/1.1)}' | xargs light -S"
 
-bindsym Mod4+Tab workspace back_and_forth
+bindsym Mod4+Tab nop
 bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
@@ -151,7 +153,7 @@ mode "Command" {
 
     bindsym F11 fullscreen toggle; mode default
 
-    bindsym Tab workspace back_and_forth; mode default
+    bindsym Tab nop; mode default
     bindsym grave workspace prev; mode default
     bindsym BackSpace workspace next; mode default
 
@@ -286,8 +288,8 @@ mode "Workspace" {
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
 
-    bindsym Tab workspace back_and_forth
-    bindsym Mod4+Tab workspace back_and_forth
+    bindsym Tab nop
+    bindsym Mod4+Tab nop
     bindsym grave workspace prev
     bindsym Mod4+grave workspace prev
     bindsym BackSpace workspace next
@@ -551,126 +553,7 @@ mode "Move and Follow" {
     bindsym Mod4+z move container to workspace 35:Z; workspace 35:Z; mode default
 }
 
-mode "Workspace Toggling" {
-    bindsym Escape mode default
-    bindsym Mod4+Escape mode default
-    bindsym ISO_Level3_Shift mode default
-    bindsym Mod4+ISO_Level3_Shift mode default
-
-    bindsym r exec "python3 ~/git/config/scripts/workspace_record.py"
-    bindsym Mod4+r exec "python3 ~/git/config/scripts/workspace_record.py"
-
-    bindsym a exec i3-input -F 'exec "python3 ~/git/config/scripts/workspace_animate.py %s"' -P 'Animation interval: '
-    bindsym Mod4+a exec i3-input -F 'exec "python3 ~/git/config/scripts/workspace_animate.py %s"' -P 'Animation interval: '
-
-    bindsym t exec "bash ~/git/config/scripts/workspace_cycle.sh"; mode default
-    bindsym Mod4+t exec "bash ~/git/config/scripts/workspace_cycle.sh"; mode default
-    bindsym space exec "bash ~/git/config/scripts/workspace_cycle.sh"
-    bindsym Mod4+space exec "bash ~/git/config/scripts/workspace_cycle.sh"
-}
-
-mode "Workspace Animate" {
-    bindsym Escape mode default
-    bindsym Mod4+Escape mode default
-    bindsym ISO_Level3_Shift mode default
-    bindsym Mod4+ISO_Level3_Shift mode default
-}
-
-mode "Workspace Record" {
-    bindsym Escape mode default
-    bindsym Mod4+Escape mode default
-    bindsym ISO_Level3_Shift nop
-    bindsym Mod4+ISO_Level3_Shift nop
-
-    bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '
-    bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '
-
-    bindsym Tab workspace back_and_forth
-    bindsym Mod4+Tab workspace back_and_forth
-    bindsym grave workspace prev
-    bindsym Mod4+grave workspace prev
-    bindsym BackSpace workspace next
-    bindsym Mod4+BackSpace workspace next
-
-    bindsym minus workspace 98:Email
-    bindsym Mod4+minus workspace 98:Email
-    bindsym equal workspace 99:Media
-    bindsym Mod4+equal workspace 99:Media
-
-    bindsym 0 workspace 0
-    bindsym Mod4+0 workspace 0
-    bindsym 1 workspace 1
-    bindsym Mod4+1 workspace 1
-    bindsym 2 workspace 2
-    bindsym Mod4+2 workspace 2
-    bindsym 3 workspace 3
-    bindsym Mod4+3 workspace 3
-    bindsym 4 workspace 4
-    bindsym Mod4+4 workspace 4
-    bindsym 5 workspace 5
-    bindsym Mod4+5 workspace 5
-    bindsym 6 workspace 6
-    bindsym Mod4+6 workspace 6
-    bindsym 7 workspace 7
-    bindsym Mod4+7 workspace 7
-    bindsym 8 workspace 8
-    bindsym Mod4+8 workspace 8
-    bindsym 9 workspace 9
-    bindsym Mod4+9 workspace 9
-
-    bindsym a workspace 10:A
-    bindsym Mod4+a workspace 10:A
-    bindsym b workspace 11:B
-    bindsym Mod4+b workspace 11:B
-    bindsym c workspace 12:C
-    bindsym Mod4+c workspace 12:C
-    bindsym d workspace 13:D
-    bindsym Mod4+d workspace 13:D
-    bindsym e workspace 14:E
-    bindsym Mod4+e workspace 14:E
-    bindsym f workspace 15:F
-    bindsym Mod4+f workspace 15:F
-    bindsym g workspace 16:G
-    bindsym Mod4+g workspace 16:G
-    bindsym h workspace 17:H
-    bindsym Mod4+h workspace 17:H
-    bindsym i workspace 18:I
-    bindsym Mod4+i workspace 18:I
-    bindsym j workspace 19:J
-    bindsym Mod4+j workspace 19:J
-    bindsym k workspace 20:K
-    bindsym Mod4+k workspace 20:K
-    bindsym l workspace 21:L
-    bindsym Mod4+l workspace 21:L
-    bindsym m workspace 22:M
-    bindsym Mod4+m workspace 22:M
-    bindsym n workspace 23:N
-    bindsym Mod4+n workspace 23:N
-    bindsym o workspace 24:O
-    bindsym Mod4+o workspace 24:O
-    bindsym p workspace 25:P
-    bindsym Mod4+p workspace 25:P
-    bindsym q workspace 26:Q
-    bindsym Mod4+q workspace 26:Q
-    bindsym r workspace 27:R
-    bindsym Mod4+r workspace 27:R
-    bindsym s workspace 28:S
-    bindsym Mod4+s workspace 28:S
-    bindsym t workspace 29:T
-    bindsym Mod4+t workspace 29:T
-    bindsym u workspace 30:U
-    bindsym Mod4+u workspace 30:U
-    bindsym v workspace 31:V
-    bindsym Mod4+v workspace 31:V
-    bindsym w workspace 32:W
-    bindsym Mod4+w workspace 32:W
-    bindsym x workspace 33:X
-    bindsym Mod4+x workspace 33:X
-    bindsym y workspace 34:Y
-    bindsym Mod4+y workspace 34:Y
-    bindsym z workspace 35:Z
-    bindsym Mod4+z workspace 35:Z
-}
+mode "Toggle" { }
 
 mode "Change Focus" {
     bindsym Escape mode default
@@ -902,8 +785,6 @@ mode "Quit?" {
     bindsym m kill
     bindsym Mod4+m kill
 
-    bindsym Tab workspace back_and_forth
-    bindsym Mod4+Tab workspace back_and_forth
     bindsym grave workspace prev
     bindsym Mod4+grave workspace prev
     bindsym BackSpace workspace next
