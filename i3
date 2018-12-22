@@ -117,7 +117,7 @@ bindsym Mod4+p mode "Position Window"
 bindsym Mod4+q mode "Quit?"
 bindsym Mod4+r mode "Resize"
 bindsym Mod4+s sticky toggle
-bindsym Mod4+t mode "Workspace Toggling"
+bindsym Mod4+t layout toggle tabbed split
 bindsym Mod4+u [urgent="latest"] focus
 bindsym Mod4+v split v
 bindsym Mod4+w mode "Workspace"
@@ -189,7 +189,7 @@ mode "Command" {
     bindsym q mode "Quit?"
     bindsym r mode "Resize"
     bindsym s sticky toggle; mode default
-    bindsym t mode "Workspace Toggling"
+    bindsym t layout toggle tabbed split
     bindsym u [urgent="latest"] focus; mode default
     bindsym v split v; mode default
     bindsym w mode "Workspace"
