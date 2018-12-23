@@ -84,7 +84,7 @@ bindsym XF86MonBrightnessDown exec "light | awk '{print int($1/1.1)}' | xargs li
 bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
-bindsym Mod4+Tab nop; #workspace_toggle 1
+bindsym Mod4+Tab nop; #workspace_toggle
 bindsym Mod4+1 nop; #workspace_toggle 1
 bindsym Mod4+2 nop; #workspace_toggle 2
 bindsym Mod4+3 nop; #workspace_toggle 3
@@ -157,7 +157,7 @@ mode "Command" {
     bindsym grave workspace prev; mode default
     bindsym BackSpace workspace next; mode default
 
-    bindsym Tab nop; #workspace_toggle 1
+    bindsym Tab nop; #workspace_toggle
     bindsym 1 nop; #workspace_toggle 1
     bindsym 2 nop; #workspace_toggle 2
     bindsym 3 nop; #workspace_toggle 3
