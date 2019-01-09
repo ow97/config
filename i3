@@ -290,8 +290,8 @@ mode "Workspace" {
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
 
-    bindsym Tab nop; #workspace_toggle 1
-    bindsym Mod4+Tab nop; #workspace_toggle 1
+    bindsym Tab nop; #workspace_toggle
+    bindsym Mod4+Tab nop; #workspace_toggle
     bindsym grave workspace prev
     bindsym Mod4+grave workspace prev
     bindsym BackSpace workspace next
@@ -594,12 +594,13 @@ mode "Position Window" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
+    bindsym R mode "Resize"
+    bindsym Mod4+R mode "Resize"
+
     bindsym F mode "Position Window (Fast)"
     bindsym Mod4+F mode "Position Window (Fast)"
     bindsym N mode "Position Window"
     bindsym Mod4+N mode "Position Window"
-    bindsym R mode "Position Window"
-    bindsym Mod4+R mode "Position Window"
     bindsym S mode "Position Window (Slow)"
     bindsym Mod4+S mode "Position Window (Slow)"
 
@@ -632,12 +633,13 @@ mode "Position Window (Slow)" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
+    bindsym R mode "Resize"
+    bindsym Mod4+R mode "Resize"
+
     bindsym F mode "Position Window (Fast)"
     bindsym Mod4+F mode "Position Window (Fast)"
     bindsym N mode "Position Window"
     bindsym Mod4+N mode "Position Window"
-    bindsym R mode "Position Window"
-    bindsym Mod4+R mode "Position Window"
     bindsym S mode "Position Window"
     bindsym Mod4+S mode "Position Window"
 
@@ -670,12 +672,13 @@ mode "Position Window (Fast)" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
+    bindsym R mode "Resize"
+    bindsym Mod4+R mode "Resize"
+
     bindsym F mode "Position Window"
     bindsym Mod4+F mode "Position Window"
     bindsym N mode "Position Window"
     bindsym Mod4+N mode "Position Window"
-    bindsym R mode "Position Window"
-    bindsym Mod4+R mode "Position Window"
     bindsym S mode "Position Window (Slow)"
     bindsym Mod4+S mode "Position Window (Slow)"
 
@@ -708,6 +711,9 @@ mode "Resize" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
+    bindsym P mode "Position Window"
+    bindsym Mod4+P mode "Position Window"
+
     bindsym F mode "Resize (Fast)"
     bindsym Mod4+F mode "Resize (Fast)"
     bindsym N mode "Resize"
@@ -733,6 +739,9 @@ mode "Resize (Slow)" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
+    bindsym P mode "Position Window"
+    bindsym Mod4+P mode "Position Window"
+
     bindsym F mode "Resize (Fast)"
     bindsym Mod4+F mode "Resize (Fast)"
     bindsym N mode "Resize"
@@ -757,6 +766,9 @@ mode "Resize (Fast)" {
     bindsym Mod4+Escape mode default
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
+
+    bindsym P mode "Position Window"
+    bindsym Mod4+P mode "Position Window"
 
     bindsym F mode "Resize"
     bindsym Mod4+F mode "Resize"
