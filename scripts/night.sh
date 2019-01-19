@@ -22,7 +22,7 @@ then
 	fi
 
 	light -S 1
-	light -k -S 0
+	light -s $(light -L | grep kbd) -S 0
 	pactl set-sink-volume 0 5%
 	i3-msg mode "Night"
 fi
@@ -36,7 +36,7 @@ fi
 if [ "$1" == "--day" ]
 then
 	light -S 20
-	light -k -S 50
+	light -s $(light -L | grep kbd) -S 50
 	pactl set-sink-volume 0 20%
 	i3-msg mode default
 fi
