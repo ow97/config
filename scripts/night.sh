@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-if [ "$1" == "--night" ]
+if [[ "$1" == "--night" ]]
 then
 	# Wait for charger to be plugged in
-	if [ $(acpi -a | grep on-line | wc -l) -eq 0 ]
+	if [[ $(acpi -a | grep on-line | wc -l) -eq 0 ]]
 	then
 		i3-nagbar -m "Plug in AC adapter" &
 
-		while [ $(acpi -a | grep on-line | wc -l) -eq 0 ]
+		while [[ $(acpi -a | grep on-line | wc -l) -eq 0 ]]
 		do
-			if [ $(jobs -r | wc -l) -eq 0 ]
+			if [[ $(jobs -r | wc -l) -eq 0 ]]
 			then
 				i3-msg mode default
 				exit
@@ -27,13 +27,13 @@ then
 	i3-msg mode "Night"
 fi
 
-if [ "$1" == "--black" ]
+if [[ "$1" == "--black" ]]
 then
 	light -S 0
 	i3-msg mode "Night (Black)"
 fi
 
-if [ "$1" == "--day" ]
+if [[ "$1" == "--day" ]]
 then
 	light -S 20
 	light -s $(light -L | grep kbd) -S 50
