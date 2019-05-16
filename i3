@@ -13,11 +13,10 @@ exec_always "~/git/config/i3custom/start.py"
 
 ############################# Configuration #############################
 
-focus_follows_mouse no
-
 font pango:Roboto 8
 
 floating_modifier Mod4
+focus_follows_mouse no
 
 gaps inner 10
 gaps outer -5
