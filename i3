@@ -6,7 +6,7 @@ exec_always "setxkbmap -layout gb"
 # Remap caps lock to middle click
 exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 
-exec_always "pkill xcompmgr; xcompmgr"
+exec_always "pkill compton; compton -b"
 exec_always "pkill redshift; sleep 5; redshift"
 
 exec_always "~/git/config/i3custom/start.py"
@@ -24,8 +24,15 @@ gaps outer -5
 smart_gaps true
 
 # Hide windows borders
-new_window none
-new_float none
+new_window pixel
+new_float pixel
+
+client.focused			#000000 #000000 #ffffff #ffffff #7f7f7f
+client.focused_inactive	#000000 #000000 #ffffff #ffffff #2f2f2f
+client.unfocused		#000000 #000000 #ffffff #ffffff #2f2f2f
+client.urgent			#000000 #000000 #ffffff #ffffff #bf0000
+client.placeholder		#000000 #000000 #ffffff #ffffff #2f343f
+client.background		#2f343f
 
 ################################## Bar ##################################
 
