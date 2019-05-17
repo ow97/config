@@ -19,9 +19,7 @@ floating_modifier Mod4
 focus_follows_mouse no
 
 gaps inner 10
-gaps outer -5
-
-smart_gaps true
+gaps outer -2
 
 # Hide windows borders
 new_window pixel
