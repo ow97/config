@@ -27,12 +27,11 @@ smart_gaps true
 new_window pixel
 new_float pixel
 
-client.focused			#000000 #000000 #ffffff #ffffff #7f7f7f
-client.focused_inactive	#000000 #000000 #ffffff #ffffff #2f2f2f
-client.unfocused		#000000 #000000 #ffffff #ffffff #2f2f2f
-client.urgent			#000000 #000000 #ffffff #ffffff #bf0000
-client.placeholder		#000000 #000000 #ffffff #ffffff #2f343f
-client.background		#2f343f
+client.focused          #EBF0F0 #87A3A3 #FFFFFF #87A3A3   #87A3A3
+client.focused_inactive #87A3A3 #255656 #FFFFFF #255656   #255656
+client.unfocused        #255656 #053333 #FFFFFF #053333   #053333
+client.urgent           #903E3E #550808 #FFFFFF #903E3E   #903E3E
+client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
 
 ################################## Bar ##################################
 
@@ -46,15 +45,15 @@ bar {
     bindsym button3 workspace back_and_forth
 
     colors {
-        background #000000
-        statusline #ffffff
+        background #053333
+        statusline #FFFFFF
         separator  #666666
 
-        focused_workspace  #4c7899 #285577 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
+        focused_workspace  #EBF0F0 #4B7979 #FFFFFF
+        active_workspace   #87A3A3 #255656 #EBF0F0
+        inactive_workspace #4B7979 #255656 #EBF0F0
+        urgent_workspace   #CA7C7C #903E3E #FFFAFA
+        binding_mode       #CAB07C #90753E #FFFDFA
     }
 }
 
