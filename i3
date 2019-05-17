@@ -27,11 +27,12 @@ smart_gaps true
 new_window pixel
 new_float pixel
 
-client.focused          #EBF0F0 #87A3A3 #FFFFFF #87A3A3   #87A3A3
-client.focused_inactive #87A3A3 #255656 #FFFFFF #255656   #255656
-client.unfocused        #255656 #053333 #FFFFFF #053333   #053333
-client.urgent           #903E3E #550808 #FFFFFF #903E3E   #903E3E
-client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
+client.focused          #87A3A3 #255656 #FFFFFF #87A3A3   #87A3A3
+client.focused_inactive #4B7979 #255656 #87A3A3 #255656   #255656
+client.unfocused        #255656 #053333 #87A3A3 #053333   #053333
+client.urgent           #903E3E #550808 #FFFAFA #903E3E   #903E3E
+client.placeholder      #000000 #000000 #7F7F7F #000000   #000000
+client.background       #EBF0F0
 
 ################################## Bar ##################################
 
@@ -49,7 +50,7 @@ bar {
         statusline #FFFFFF
         separator  #666666
 
-        focused_workspace  #EBF0F0 #4B7979 #FFFFFF
+        focused_workspace  #87A3A3 #4B7979 #FFFFFF
         active_workspace   #87A3A3 #255656 #EBF0F0
         inactive_workspace #4B7979 #255656 #EBF0F0
         urgent_workspace   #CA7C7C #903E3E #FFFAFA
