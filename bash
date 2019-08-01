@@ -15,6 +15,8 @@ export PS1="${BOLD}[$?] \h \W > ${RESET}"
 export EDITOR=nano
 export TERM=xterm
 
+export MOZ_USE_XINPUT2=1
+
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec startx
 fi
