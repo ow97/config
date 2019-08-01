@@ -1,6 +1,6 @@
 ################################ Startup ################################
 
-exec_always "feh --bg-fill ~/git/config/img/background.png"
+exec_always "feh --bg-fill ~/git/config/img/background.jpg"
 
 exec_always "setxkbmap -layout gb"
 # Remap caps lock to middle click
