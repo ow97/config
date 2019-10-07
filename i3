@@ -824,7 +824,7 @@ mode "Lock?" {
     bindsym Mod4+l exec "bash ~/git/config/scripts/lock.sh"; mode default
 
     bindsym b exec "xset dpms force off"; mode default
-    bindsym Mod4+b exec "xset dpms force off"; mode default
+    bindsym Mod4+b exec "sleep 1; xset dpms force off"; mode default
 
     bindsym s exec "systemctl suspend"; mode default;
     bindsym Mod4+s exec "systemctl suspend"; mode default;
