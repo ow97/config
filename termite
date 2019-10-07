@@ -3,7 +3,7 @@ font = Source Code Pro 10
 
 [colors]
 foreground = rgba(255, 255, 255, 1)
-background = rgba(255, 255, 255, 0)
+background = rgba(0, 0, 0, 0)
 
 [options]
-scrollback_lines = -1
+scrollback_lines = 65535
