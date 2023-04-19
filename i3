@@ -4,12 +4,10 @@ exec_always "feh --bg-fill ~/git/config/img/background.jpg"
 
 exec_always "setxkbmap -layout gb"
 # Remap caps lock to middle click
-exec_always "sleep 1; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
+exec_always "sleep 3; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 
-exec_always "pkill compton; compton -b"
-exec_always "pkill redshift; sleep 5; redshift"
-
-exec_always "~/git/config/i3custom/start.py"
+exec_always "pkill picom; sleep .1; pkill -SIGKILL picom; picom -b"
+exec_always "pkill -SIGKILL redshift; redshift -P"
 
 ############################# Configuration #############################
 
@@ -22,8 +20,8 @@ gaps inner 10
 gaps outer -2
 
 # Hide windows borders
-new_window pixel
-new_float pixel
+default_border          pixel
+default_floating_border pixel
 
 client.focused          #87A3A3 #255656 #FFFFFF #87A3A3   #87A3A3
 client.focused_inactive #4B7979 #255656 #87A3A3 #255656   #255656
@@ -70,7 +68,7 @@ bindsym Pointer_Button3 exec "xdotool click 3"
 bindsym Mod4+F5 reload
 bindsym Mod4+F6 restart
 
-bindsym Mod4+F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
+bindsym Mod4+F7 exec "bash ~/git/config/scripts/monitorhotplug.sh"
 
 bindsym Mod4+F11 fullscreen toggle
 
@@ -88,16 +86,7 @@ bindsym XF86MonBrightnessDown exec "light | awk '{print int($1/1.1)}' | xargs li
 bindsym Mod4+grave workspace prev
 bindsym Mod4+BackSpace workspace next
 
-bindsym Mod4+Tab nop; #workspace_toggle
-bindsym Mod4+1 nop; #workspace_toggle 1
-bindsym Mod4+2 nop; #workspace_toggle 2
-bindsym Mod4+3 nop; #workspace_toggle 3
-bindsym Mod4+4 nop; #workspace_toggle 4
-bindsym Mod4+5 nop; #workspace_toggle 5
-bindsym Mod4+6 nop; #workspace_toggle 6
-bindsym Mod4+7 nop; #workspace_toggle 7
-bindsym Mod4+8 nop; #workspace_toggle 8
-bindsym Mod4+9 nop; #workspace_toggle 9
+bindsym Mod4+Tab workspace back_and_forth
 
 bindsym Mod4+0 nop
 bindsym Mod4+minus nop
@@ -126,12 +115,12 @@ bindsym Mod4+t layout toggle tabbed split
 bindsym Mod4+u [urgent="latest"] focus
 bindsym Mod4+v split v
 bindsym Mod4+w mode "Workspace"
-bindsym Mod4+x move workspace to output HDMI-1
+bindsym Mod4+x move workspace to output HDMI-2
 bindsym Mod4+y nop
 bindsym Mod4+z mode "Enter night mode?"
 
-bindsym Mod4+Return exec "termite"
-bindsym Mod4+KP_Enter exec "termite"
+bindsym Mod4+Return exec "alacritty"
+bindsym Mod4+KP_Enter exec "alacritty"
 
 bindsym Mod4+Left focus left
 bindsym Mod4+Down focus down
@@ -154,23 +143,14 @@ mode "Command" {
     bindsym F5 reload
     bindsym F6 restart
 
-    bindsym F8 exec "bash ~/git/config/scripts/monitorhotplug.sh"
+    bindsym F7 exec "bash ~/git/config/scripts/monitorhotplug.sh"
 
     bindsym F11 fullscreen toggle; mode default
 
     bindsym grave workspace prev; mode default
     bindsym BackSpace workspace next; mode default
 
-    bindsym Tab nop; #workspace_toggle
-    bindsym 1 nop; #workspace_toggle 1
-    bindsym 2 nop; #workspace_toggle 2
-    bindsym 3 nop; #workspace_toggle 3
-    bindsym 4 nop; #workspace_toggle 4
-    bindsym 5 nop; #workspace_toggle 5
-    bindsym 6 nop; #workspace_toggle 6
-    bindsym 7 nop; #workspace_toggle 7
-    bindsym 8 nop; #workspace_toggle 8
-    bindsym 9 nop; #workspace_toggle 9
+    bindsym Tab workspace back_and_forth
 
     bindsym 0 nop
     bindsym minus nop
@@ -199,12 +179,12 @@ mode "Command" {
     bindsym u [urgent="latest"] focus; mode default
     bindsym v split v; mode default
     bindsym w mode "Workspace"
-    bindsym x move workspace to output HDMI-1; mode default
+    bindsym x move workspace to output HDMI-2; mode default
     bindsym y nop
     bindsym z mode "Enter night mode?"
 
-    bindsym Return exec "termite"; mode default
-    bindsym KP_Enter exec "termite"; mode default
+    bindsym Return exec "alacritty"; mode default
+    bindsym KP_Enter exec "alacritty"; mode default
 
     bindsym Left focus left; mode default
     bindsym Down focus down; mode default
@@ -226,13 +206,13 @@ mode "Execute" {
     bindsym ISO_Level3_Shift mode default
     bindsym Mod4+ISO_Level3_Shift mode default
 
-    bindsym Return exec "termite"; mode default
-    bindsym Mod4+Return exec "termite"; mode default
-    bindsym KP_Enter exec "termite"; mode default
-    bindsym Mod4+KP_Enter exec "termite"; mode default
+    bindsym Return exec "alacritty"; mode default
+    bindsym Mod4+Return exec "alacritty"; mode default
+    bindsym KP_Enter exec "alacritty"; mode default
+    bindsym Mod4+KP_Enter exec "alacritty"; mode default
 
-    bindsym a exec "atom"; mode default
-    bindsym Mod4+a exec "atom"; mode default
+    bindsym a mode default
+    bindsym Mod4+a mode default
     bindsym b exec "chromium"; mode default
     bindsym Mod4+b exec "chromium"; mode default
     bindsym c exec "code -n"; mode default
@@ -245,8 +225,8 @@ mode "Execute" {
     bindsym Mod4+f exec "firefox"; mode default
     bindsym g exec "gimp"; mode default
     bindsym Mod4+g exec "gimp"; mode default
-    bindsym h exec "termite --exec='sudo htop'"; mode default
-    bindsym Mod4+h exec "termite --exec='sudo htop'"; mode default
+    bindsym h exec "alacritty --command sudo nice -n -19 htop"; mode default
+    bindsym Mod4+h exec "alacritty --command sudo nice -n -19 htop"; mode default
     bindsym i mode default
     bindsym Mod4+i mode default
     bindsym j exec "jetbrains-toolbox"; mode default
@@ -263,8 +243,8 @@ mode "Execute" {
     bindsym Mod4+o mode default
     bindsym p mode default
     bindsym Mod4+p mode default
-    bindsym q mode default
-    bindsym Mod4+q mode default
+    bindsym q exec "qgis"; mode default
+    bindsym Mod4+q exec "qgis"; mode default
     bindsym r mode default
     bindsym Mod4+r mode default
     bindsym s mode default
@@ -275,10 +255,10 @@ mode "Execute" {
     bindsym Mod4+u mode default
     bindsym v exec "pavucontrol"; mode default
     bindsym Mod4+v exec "pavucontrol"; mode default
-    bindsym w exec "wicd-gtk -n"; mode default
-    bindsym Mod4+w exec "wicd-gtk -n"; mode default
-    bindsym x exec "texstudio --start-always"; mode default
-    bindsym Mod4+x exec "texstudio --start-always"; mode default
+    bindsym w exec "nm-connection-editor"; mode default
+    bindsym Mod4+w exec "nm-connection-editor"; mode default
+    bindsym x exec "xarchiver"; mode default
+    bindsym Mod4+x exec "xarchiver"; mode default
     bindsym y mode default
     bindsym Mod4+y mode default
     bindsym z mode default
@@ -294,8 +274,8 @@ mode "Workspace" {
     bindsym space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
     bindsym Mod4+space exec i3-input -F 'workspace "%s"' -P 'Workspace name: '; mode default
 
-    bindsym Tab nop; #workspace_toggle
-    bindsym Mod4+Tab nop; #workspace_toggle
+    bindsym Tab workspace back_and_forth
+    bindsym Mod4+Tab workspace back_and_forth
     bindsym grave workspace prev
     bindsym Mod4+grave workspace prev
     bindsym BackSpace workspace next
@@ -802,8 +782,8 @@ mode "Quit?" {
     bindsym q kill; mode default
     bindsym Mod4+q kill; mode default
 
-    bindsym k exec "termite -e xkill"; mode default
-    bindsym Mod4+k exec "termite -e xkill"; mode default
+    bindsym k exec "alacritty --command xkill"; mode default
+    bindsym Mod4+k exec "alacritty --command xkill"; mode default
 
     bindsym m kill
     bindsym Mod4+m kill

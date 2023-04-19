@@ -20,3 +20,8 @@ export MOZ_USE_XINPUT2=1
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec startx
 fi
+
+HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+

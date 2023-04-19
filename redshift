@@ -13,6 +13,6 @@ location-provider=manual
 adjustment-method=randr
 
 [manual]
-lat=54.7
-lon=-1.6
+lat=53.52
+lon=-1.66
 

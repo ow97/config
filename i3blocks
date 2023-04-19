@@ -11,11 +11,6 @@ command=iwgetid -r
 separator=false
 interval=5
 
-[wifi]
-instance=wlp1s0
-interval=5
-separator=false
-
 [iface]
 interval=5
 separator=false
@@ -24,47 +19,61 @@ separator=false
 min_width=IN 999K OUT 99K
 align=center
 interval=1
+TREAT_UNKNOWN_AS_UP=0
+separator=false
 
-[cpu_usage -w 25 -c 90]
-label=CPU
+[wifi]
+interval=5
+instance=wlp64s0
+
+[cpu_usage]
+label=CPU 
 interval=1
 min_width=CPU 100.00%
 align=center
 separator=false
 
+[cpu_freq]
+command=$HOME/git/config/blocks/freq.sh
+interval=1
+label=FREQ
+min_width=FREQ 1000MHz
+align=center
+seperator=false
+
 [temperature]
-command=sensors | awk '/Core/ {sum+=int($3); c++;} END {print int(sum/c)"°C"}'
-label=TEMP
+command=/usr/lib/i3blocks/temperature --chip coretemp-isa-0000
+label=TEMP 
 interval=5
 
 [memory]
-label=RAM
+label=RAM 
 separator=false
 interval=5
 
 [memory]
-label=SWAP
+label=SWAP 
 instance=swap
 separator=false
 interval=5
 
 [disk]
-label=DISK
+label=DISK 
 interval=30
 
 [volume]
-label=VOL
-command=$HOME/git/config/blocks/volume.sh
+label=VOL 
+#command=$HOME/git/config/blocks/volume.sh
 interval=1
 separator=false
 
 [brightness]
-label=BRIGHT
+label=BRIGHT 
 command=$HOME/git/config/blocks/brightness.sh
 interval=1
 
 [battery]
-label=BAT
+label=BAT 
 interval=5
 
 [time]

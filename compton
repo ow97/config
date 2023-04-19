@@ -4,7 +4,7 @@ glx-no-stencil = true;
 glx-copy-from-front = false;
 glx-no-rebind-pixmap = true;
 
-vsync = "opengl-swc";
+vsync = true;
 
 detect-transient = true;
 detect-client-leader = true;
@@ -45,14 +45,14 @@ shadow-exclude = [
 ];
 
 blur-background = true;
-blur-method = "kawase";
+blur-method = "dual_kawase";
 blur-strength = 5;
 detect-client-opacity = true;
 blur-background-exclude = [
-    "! class_g='Termite'"
+    "! class_g='Alacritty'"
 ];
 
-fading = true;
+fading = false;
 fade-delta = 12;
 fade-in-step = 0.2;
 fade-out-step = 0.2;
