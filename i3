@@ -6,7 +6,7 @@ exec_always "setxkbmap -layout gb"
 # Remap caps lock to middle click
 exec_always "sleep 3; /usr/bin/xmodmap -e 'keycode 66 = Pointer_Button2'"
 
-exec_always "pkill picom; sleep .1; pkill -SIGKILL picom; picom -b"
+exec_always "pkill picom; sleep .1; pkill -SIGTERM picom; picom -b"
 exec_always "pkill -SIGKILL redshift; redshift -P"
 
 ############################# Configuration #############################
